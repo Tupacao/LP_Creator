@@ -1,9 +1,13 @@
+import { ThemeProvider } from '@mui/material';
 import Routers from '../Routers';
+import theme from '../shared/styles';
 
 function App() {
   return (
     <>
-      <Routers />
+      <ThemeProvider theme={theme}>
+        <Routers />
+      </ThemeProvider>
     </>
   );
 }
