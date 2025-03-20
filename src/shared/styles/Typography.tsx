@@ -1,5 +1,5 @@
 const typography = {
-    fontFamily: 'Roboto, sans-serif',
-}
+  fontFamily: 'Roboto, sans-serif',
+};
 
 export default typography;

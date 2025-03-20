@@ -1,16 +1,14 @@
 import { Box, Button, Link, Typography, TextField } from '@mui/material';
-
-const boxStyles = {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  gap: '20px',
-  borderRadius: '10px',
-  width: '400px',
-  height: '400px',
-};
+import { use, useEffect, useState } from 'react';
 
 function Login() {
+  const [email, setEmail] = useState(String);
+  const [password, setPassword] = useState(String);
+
+  function seeLoginAndPassword() {
+    console.log(email, password);
+  }
+
   return (
     <>
       <Box
@@ -27,13 +25,18 @@ function Login() {
       >
         <Box
           sx={{
+            display: 'flex',
             backgroundColor: 'primary.main',
             width: '400px',
             height: '400px',
             mt: { desktop: '100px', mobile: '10px' },
           }}
         >
-          <img src='' width={'100%'} height={'100%'} />
+          <img
+            src='https://amopaocaseiro.com.br/wp-content/uploads/2022/08/yt-069_pao-de-queijo_receita-840x560.jpg'
+            width={'100%'}
+            height={'100%'}
+          />
         </Box>
         <Box
           sx={{
@@ -63,7 +66,6 @@ function Login() {
             }}
           >
             <TextField
-              id='outlined-basic'
               label='Email'
               variant='outlined'
               type='email'
@@ -77,9 +79,9 @@ function Login() {
                   color: 'text.primary',
                 },
               }}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
-              id='outlined-basic'
               label='Senha'
               variant='outlined'
               type='password'
@@ -92,8 +94,13 @@ function Login() {
                   color: 'text.primary',
                 },
               }}
+              onChange={(e) => setPassword(e.target.value)}
             />
-            <Button variant='contained' sx={{ width: '40%' }}>
+            <Button
+              variant='contained'
+              sx={{ width: '40%' }}
+              onClick={seeLoginAndPassword}
+            >
               Logar
             </Button>
           </Box>
