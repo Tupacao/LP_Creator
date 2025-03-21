@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography, Button, Container } from '@mui/material';
 
 interface FooterProps {
   title: string;
@@ -8,40 +8,46 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ title, text, buttonText }) => {
+
+
   return (
     <Box
       sx={{
-        backgroundColor: '#40231D',
+        backgroundColor: "primary.main",
         boxShadow: '0 -2px 4px rgba(0,0,0,0.1)',
         padding: '16px',
       }}
     >
-      <div className='flex flex-col md:flex-row justify-between'>
-        <div>
-          <Typography
-            variant='h6'
-            sx={{ color: '#F26938', fontWeight: 'bold' }}
-          >
-            {title}
-          </Typography>
-          <Typography
-            variant='body1'
-            sx={{ color: '#D9D9D9', marginTop: '8px' }}
-          >
-            {text}
-          </Typography>
-          <Button
-            sx={{
-              backgroundColor: '#D9D9D9',
-              color: '#40231D',
-              marginTop: '16px',
-            }}
-          >
-            {buttonText}
-          </Button>
-        </div>
-        <div>{/* Espaço vazio para futuros elementos */}</div>
-      </div>
+      <Container maxWidth="lg">
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            justifyContent: 'space-between',
+          }}
+        >
+          <Box>
+            <Typography variant="h6" sx={{ color: "secondary.main", fontWeight: 'bold' }}>
+              {title}
+            </Typography>
+            <Typography variant="body1" sx={{ color: "background.default", marginTop: '8px' }}>
+              {text}
+            </Typography>
+            <Button
+              sx={{
+                backgroundColor: "background.default",
+                color: "primary.main",
+                marginTop: '16px',
+              }}
+            >
+              {buttonText}
+            </Button>
+          </Box>
+          <Box>
+            {/* Espaço vazio para futuros elementos */}
+          </Box>
+        </Box>
+      </Container>
     </Box>
   );
 };
