@@ -1,13 +1,9 @@
 import { Box, Button, Link, Typography, TextField } from '@mui/material';
-import { use, useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function Login() {
   const [email, setEmail] = useState(String);
   const [password, setPassword] = useState(String);
-
-  function seeLoginAndPassword() {
-    console.log(email, password);
-  }
 
   return (
     <>
@@ -97,9 +93,10 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <Button
+              component={Link}
+              href='/home'
               variant='contained'
               sx={{ width: '40%' }}
-              onClick={seeLoginAndPassword}
             >
               Logar
             </Button>
