@@ -2,7 +2,6 @@
 
 - Vite
 - Material UI
-- Tailwind
 - Mockum
 - Router-Dom
 - Axios
