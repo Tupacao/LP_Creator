@@ -1,4 +1,4 @@
-import { Box, Button, Typography, Link, FormGroup } from '@mui/material';
+import { Box, Typography, Link, FormGroup } from '@mui/material';
 import FormInput from '../../shared/components/Input/FormInput';
 import ButtonRedirect from '../../shared/components/Button/ButtonRedirect';
 
@@ -8,6 +8,7 @@ export default function Register() {
       <Box
         sx={{
           display: 'flex',
+          flexWrap: 'wrap',
           justifyContent: 'center',
           alignItems: 'center',
           gap: '20px',
@@ -25,6 +26,7 @@ export default function Register() {
             backgroundColor: 'primary.light',
             borderRadius: '10px',
             padding: '20px',
+            mt: { desktop: '100px', mobile: '10px' },
           }}
         >
           <Typography
@@ -51,7 +53,7 @@ export default function Register() {
             <FormInput label='Senha' type='password' />
             <FormInput label='Confirme sua senha' type='password' />
           </FormGroup>
-          <ButtonRedirect text='Registrar' href='/home' />
+          <ButtonRedirect text='Criar conta' href='/home' />
           <Link
             href='/login'
             textAlign={'center'}
@@ -70,6 +72,7 @@ export default function Register() {
             backgroundColor: 'primary.light',
             width: '400px',
             height: '400px',
+            mb: { desktop: '100px', mobile: '10px' },
           }}
         >
           <img
