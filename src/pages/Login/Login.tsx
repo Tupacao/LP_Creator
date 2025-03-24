@@ -1,5 +1,7 @@
 import { Box, Button, Link, Typography, TextField } from '@mui/material';
 import { useState } from 'react';
+import FormInput from '../../shared/components/Input/FormInput';
+import ButtonRedirect from '../../shared/components/Button/ButtonRedirect';
 
 function Login() {
   const [email, setEmail] = useState(String);
@@ -62,45 +64,18 @@ function Login() {
               alignItems: 'center',
             }}
           >
-            <TextField
+            <FormInput
               label='Email'
-              variant='outlined'
               type='email'
               placeholder='algo@gmail.com'
-              color='primary'
-              sx={{
-                '& .MuiInputBase-input': {
-                  color: 'text.secondary',
-                },
-                '& .MuiInputLabel-root': {
-                  color: 'text.primary',
-                },
-              }}
-              onChange={(e) => setEmail(e.target.value)}
+              functionOnChange={(e) => setEmail(e.target.value)}
             />
-            <TextField
+            <FormInput
               label='Senha'
-              variant='outlined'
               type='password'
-              placeholder='......'
-              sx={{
-                '& .MuiInputBase-input': {
-                  color: 'text.secondary',
-                },
-                '& .MuiInputLabel-root': {
-                  color: 'text.primary',
-                },
-              }}
-              onChange={(e) => setPassword(e.target.value)}
+              functionOnChange={(e) => setPassword(e.target.value)}
             />
-            <Button
-              component={Link}
-              href='/home'
-              variant='contained'
-              sx={{ width: '40%' }}
-            >
-              Logar
-            </Button>
+            <ButtonRedirect text='Logar' href='/home' />
           </Box>
           <Link
             href='/register'
