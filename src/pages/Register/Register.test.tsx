@@ -37,5 +37,4 @@ describe('Register', () => {
         expect(logo).toBeInTheDocument();
         expect(logo).toHaveAttribute('src', 'https://amopaocaseiro.com.br/wp-content/uploads/2022/08/yt-069_pao-de-queijo_receita-840x560.jpg');
     })
-
 })
