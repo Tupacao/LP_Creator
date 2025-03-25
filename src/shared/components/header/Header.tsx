@@ -1,7 +1,8 @@
-import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
+import { AppBar, Toolbar, Button, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import logo from '../../assets/lp_logo.png'; // Certifique-se de que o caminho para a logo está correto
 
 const Header: React.FC = () => {
   return (
@@ -19,12 +20,9 @@ const Header: React.FC = () => {
           flexWrap: 'wrap',
         }}
       >
-        <Typography
-          variant='h6'
-          sx={{ fontWeight: 'bold', color: 'primary.main' }}
-        >
-          LP Creator
-        </Typography>
+        <Box component={Link} to='/home'>
+          <img src={logo} alt='LP Creator Logo' style={{ height: '65px', width: '65px' }} />
+        </Box>
         <Box sx={{ display: 'flex', gap: 2 }}>
           <Button
             component={Link}
@@ -49,7 +47,7 @@ const Header: React.FC = () => {
           </Button>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-          <Button component={Link} to='/user' sx={{ textDecoration: 'none' }}>
+          <Button component={Link} to='/user' data-testid="user-button" sx={{ textDecoration: 'none' }}>
             <Box
               sx={{
                 backgroundColor: 'primary.main',

@@ -1,13 +1,7 @@
 import React from 'react';
 import { Box, Typography, Button, Container } from '@mui/material';
 
-interface FooterProps {
-  title: string;
-  text: string;
-  buttonText: string;
-}
-
-const Footer: React.FC<FooterProps> = ({ title, text, buttonText }) => {
+const Footer: React.FC= () => {
   return (
     <Box
       sx={{
@@ -29,13 +23,13 @@ const Footer: React.FC<FooterProps> = ({ title, text, buttonText }) => {
               variant='h6'
               sx={{ color: 'secondary.main', fontWeight: 'bold' }}
             >
-              {title}
+              Footer
             </Typography>
             <Typography
               variant='body1'
               sx={{ color: 'background.default', marginTop: '8px' }}
             >
-              {text}
+              Para fazer com que ao clicar na logo seja redirecionado para a página inicial, você pode envolver a imagem da logo com o componente Link do react-router-dom. Aqui está como você pode fazer isso:
             </Typography>
             <Button
               sx={{
@@ -44,7 +38,7 @@ const Footer: React.FC<FooterProps> = ({ title, text, buttonText }) => {
                 marginTop: '16px',
               }}
             >
-              {buttonText}
+              Botão
             </Button>
           </Box>
           <Box>{/* Espaço vazio para futuros elementos */}</Box>
