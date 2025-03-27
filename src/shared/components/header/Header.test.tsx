@@ -8,7 +8,7 @@ describe('Header', () => {
     render(
       <BrowserRouter>
         <Header />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
   });
 
@@ -23,7 +23,6 @@ describe('Header', () => {
 
     const userButton = screen.getByTestId('user-button');
     expect(userButton).toBeInTheDocument();
-
   });
 
   it('navegação funciona corretamente', async () => {

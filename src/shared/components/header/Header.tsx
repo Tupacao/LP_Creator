@@ -21,7 +21,11 @@ const Header: React.FC = () => {
         }}
       >
         <Box component={Link} to='/home'>
-          <img src={logo} alt='LP Creator Logo' style={{ height: '65px', width: '65px' }} />
+          <img
+            src={logo}
+            alt='LP Creator Logo'
+            style={{ height: '65px', width: '65px' }}
+          />
         </Box>
         <Box sx={{ display: 'flex', gap: 2 }}>
           <Button
@@ -47,7 +51,12 @@ const Header: React.FC = () => {
           </Button>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-          <Button component={Link} to='/user' data-testid="user-button" sx={{ textDecoration: 'none' }}>
+          <Button
+            component={Link}
+            to='/user'
+            data-testid='user-button'
+            sx={{ textDecoration: 'none' }}
+          >
             <Box
               sx={{
                 backgroundColor: 'primary.main',

@@ -12,7 +12,7 @@ function Routers() {
         <Route path='/home' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/creator' element={<LPCreator/>} />
+        <Route path='/creator' element={<LPCreator />} />
         <Route path='/sites' element={<h1>Sites Criados</h1>} />
         <Route path='/user' element={<h1>Dados do Usuário</h1>} />
         <Route path='*' element={<h1>Página não encontrada</h1>} />
