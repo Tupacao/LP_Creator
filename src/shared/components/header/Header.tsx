@@ -2,9 +2,14 @@ import { AppBar, Toolbar, Button, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import logo from '../../assets/lp_logo.png'; // Certifique-se de que o caminho para a logo está correto
+import logo from '../../assets/lp_logo.png';
+import DadosUsuario from '../DadosUsuario/DadosUsuario';
+import { useState } from 'react';
+
 
 const Header: React.FC = () => {
+    const [drawerOpen, setDrawerOpen] = useState(false);
+
   return (
     <AppBar
       position='static'
@@ -47,7 +52,7 @@ const Header: React.FC = () => {
           </Button>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-          <Button component={Link} to='/user' data-testid="user-button" sx={{ textDecoration: 'none' }}>
+          <Button onClick={() => setDrawerOpen(true)} data-testid="user-button" sx={{ textDecoration: 'none' }}>
             <Box
               sx={{
                 backgroundColor: 'primary.main',
@@ -65,6 +70,7 @@ const Header: React.FC = () => {
           </Button>
         </Box>
       </Toolbar>
+        <DadosUsuario open={drawerOpen} onClose={() => setDrawerOpen(false)} />
     </AppBar>
   );
 };
