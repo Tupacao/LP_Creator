@@ -69,8 +69,8 @@ const Header: React.FC = () => {
             </Box>
           </Button>
         </Box>
+          <DadosUsuario data-testid="drawer-user" open={drawerOpen} onClose={() => setDrawerOpen(false)} />
       </Toolbar>
-        <DadosUsuario open={drawerOpen} onClose={() => setDrawerOpen(false)} />
     </AppBar>
   );
 };
