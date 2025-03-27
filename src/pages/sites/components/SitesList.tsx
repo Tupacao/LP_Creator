@@ -1,7 +1,6 @@
-// SitesList.tsx
 import { Box, List } from "@mui/material";
 import ItemSite from "./ItemSite";
-import React from "react";
+
 
 interface Site {
     id: number;
@@ -9,17 +8,17 @@ interface Site {
     createdAt: string | Date;
 }
 
-const SitesList: React.FC = () => {
+const sites: Site[] = [
+    { id: 1, name: 'Landing Page de Vendas', createdAt: '2024-08-29' },
+    { id: 2, name: 'Site Institucional', createdAt: '2024-08-28' },
+    { id: 3, name: 'Portfólio Online', createdAt: '2024-08-27' },
+    { id: 4, name: 'Blog Pessoal', createdAt: '2024-08-26' },
+    { id: 5, name: 'E-commerce', createdAt: '2024-08-25' },
+    { id: 6, name: 'Dashboard Admin', createdAt: '2024-08-24' },
+    { id: 7, name: 'Sistema de Gestão', createdAt: '2024-08-23' },
+];
 
-    const sites: Site[] = [
-        { id: 1, name: 'Landing Page de Vendas', createdAt: '2024-08-29' },
-        { id: 2, name: 'Site Institucional', createdAt: '2024-08-28' },
-        { id: 3, name: 'Portfólio Online', createdAt: '2024-08-27' },
-        { id: 4, name: 'Blog Pessoal', createdAt: '2024-08-26' },
-        { id: 5, name: 'E-commerce', createdAt: '2024-08-25' },
-        { id: 6, name: 'Dashboard Admin', createdAt: '2024-08-24' },
-        { id: 7, name: 'Sistema de Gestão', createdAt: '2024-08-23' },
-    ];
+const SitesList: React.FC = () => {
 
     return (
         <Box

@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ListItem, ListItemText, ListItemButton, IconButton, Typography, Box, Modal, Button, Paper } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 
 interface ItemSiteProps {
     site: {
@@ -39,7 +38,7 @@ const ItemSite: React.FC<ItemSiteProps> = ({ site }) => {
                         </IconButton>
                     </Box>
                 }>
-                    <ListItemButton component={Link} to={`/sites/${site.id}`} sx={{ borderRadius: 2 }}>
+                    <ListItemButton sx={{ borderRadius: 2 }}>
                         <ListItemText
                             primary={
                                 <Typography variant="h6" color="primary.main" fontWeight={600}>
@@ -67,7 +66,7 @@ const ItemSite: React.FC<ItemSiteProps> = ({ site }) => {
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
                     width: 400,
-                    bgcolor: 'background.paper',
+                    backgroundColor: 'background.paper',
                     boxShadow: 24,
                     p: 4,
                     borderRadius: 2

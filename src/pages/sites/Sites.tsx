@@ -5,12 +5,7 @@ import SitesList from "./components/SitesList.tsx";
 
 const Sites: React.FC = () => {
     return (
-        <Box
-            display='flex'
-            flexDirection='column'
-            minHeight='100vh'
-            overflow='hidden'
-        >
+        <Box>
             <Header />
             <SitesList />
             <Footer />
