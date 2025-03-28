@@ -21,6 +21,7 @@ export default function ChangeBox({
         borderRadius: '4px',
         backgroundColor: color ? 'primary.light' : 'background.default',
         cursor: 'pointer',
+        boxShadow: 8,
       }}
     >
       <Typography fontSize={'20px'} fontWeight={'bold'}>

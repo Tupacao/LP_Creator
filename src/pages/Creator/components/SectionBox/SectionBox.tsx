@@ -21,6 +21,7 @@ export default function SectionBox({
   return (
     <>
       <Box
+        data-testid={`section-box-${title}`}
         onClick={handleOpen}
         sx={{
           display: 'flex',
@@ -33,6 +34,7 @@ export default function SectionBox({
           borderRadius: '4px',
           cursor:
             title != 'Footer' && title != 'Header' ? 'pointer' : 'default',
+          boxShadow: 8,
         }}
       >
         <Typography>{title}</Typography>

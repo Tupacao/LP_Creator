@@ -2,11 +2,7 @@ import { Box, Button, Typography } from '@mui/material';
 import Footer from '../../shared/components/footer/Footer';
 import Header from '../../shared/components/header/Header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faAngleLeft,
-  faAngleRight,
-  faPlus,
-} from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft, faAngleRight, faPlus } from '@fortawesome/free-solid-svg-icons';
 import SectionBox from './components/SectionBox/SectionBox';
 import ChangeBox from './components/ChangeBox/ChangeBox';
 import { JSX, useState } from 'react';
@@ -84,7 +80,7 @@ export default function LPCreator() {
   };
 
   const removeSection = (index: number) => {
-    const newSection = dataSection.filter((item, i) => i !== index);
+    const newSection = dataSection.filter((_item, i) => i !== index);
     const newSection2 = newSection.map((item, i) => ({
       title: `Section${i + 1}`,
       color: item.color,
@@ -98,9 +94,13 @@ export default function LPCreator() {
       <Box
         sx={{
           display: 'flex',
-          py: '10px',
-          px: '10px',
+          p: '10px',
           justifyContent: 'space-around',
+          backgroundColor: 'background.default',
+          width: '80%',
+          mx: 'auto',
+          mt: '20px',
+          borderRadius: '4px',
         }}
       >
         <Box
@@ -173,6 +173,7 @@ export default function LPCreator() {
             backgroundColor: 'primary.light',
             padding: '20px',
             borderRadius: '10px',
+            boxShadow: 8,
           }}
         >
           {component}
