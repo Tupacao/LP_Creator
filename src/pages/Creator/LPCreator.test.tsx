@@ -63,7 +63,7 @@ describe('LPCreator', () => {
     });
 
     fireEvent.click(buttonChange);
-    
+
     await waitFor(() => {
       expect(screen.getByText('HeaderOne')).toBeInTheDocument();
     });
