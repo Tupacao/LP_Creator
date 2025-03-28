@@ -2,7 +2,11 @@ import { Box, Button, Typography } from '@mui/material';
 import Footer from '../../shared/components/footer/Footer';
 import Header from '../../shared/components/header/Header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft, faAngleRight, faPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAngleLeft,
+  faAngleRight,
+  faPlus,
+} from '@fortawesome/free-solid-svg-icons';
 import SectionBox from './components/SectionBox/SectionBox';
 import ChangeBox from './components/ChangeBox/ChangeBox';
 import { JSX, useState } from 'react';
@@ -10,7 +14,7 @@ import ModalButton from './components/ModalButton/ModalButton';
 
 const number_0 = (
   <>
-    <Typography variant='h2'>Header</Typography>
+    <Typography variant='h2'>HeaderZero</Typography>
     <Typography variant='body1'>
       Aqui você pode editar o cabeçalho do seu site
     </Typography>
@@ -28,7 +32,7 @@ const number_1 = (
     <Typography variant='body1'>
       Aqui você pode editar o cabeçalho do seu site
     </Typography>
-    <Typography variant='h2'>Header</Typography>
+    <Typography variant='h2'>HeaderOne</Typography>
   </>
 );
 
@@ -124,6 +128,7 @@ export default function LPCreator() {
           <SectionBox title='Footer' color={indexClick == dataSection.length} />
         </Box>
         <Box
+          data-testid='add-section'
           onClick={addSection}
           sx={{
             display: 'flex',
@@ -147,6 +152,7 @@ export default function LPCreator() {
         }}
       >
         <Box
+          data-testid='left-click'
           onClick={handleLeftClick}
           sx={{
             width: '50px',
@@ -179,6 +185,7 @@ export default function LPCreator() {
           {component}
         </Box>
         <Box
+          data-testid='right-click'
           onClick={handleRightClick}
           sx={{
             width: '50px',

@@ -23,6 +23,7 @@ describe('ChangeBox', () => {
     test('Should call onClickFunction when cliked', () => {
         const handleClick = jest.fn()
         render(<ChangeBox title="Teste" color={false} onClickFunction={handleClick}/>)
+        
         const changeBox = screen.getByText('Teste')
         fireEvent.click(changeBox)
         expect(handleClick).toHaveBeenCalledTimes(1)

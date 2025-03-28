@@ -73,6 +73,7 @@ describe('SectionBox', () => {
     render(<SectionBox title='Teste' color={false} />);
     const sectionBox = screen.getByText('Teste');
     fireEvent.click(sectionBox);
+    
     const closeButton = screen.getByText('Não');
     fireEvent.click(closeButton);
     expect(
