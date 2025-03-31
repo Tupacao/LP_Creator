@@ -55,7 +55,7 @@ export default function PreCreator() {
             }}
           >
             <FormInput
-              label='Nome do site'
+              label='Nome da LP'
               type='name'
               placeholder='Fulano de tal'
               functionOnChange={(e) => setName(e.target.value)}
