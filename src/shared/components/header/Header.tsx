@@ -26,7 +26,11 @@ const Header: React.FC = () => {
         }}
       >
         <Box component={Link} to='/home'>
-          <img src={logo} alt='LP Creator Logo' style={{ height: '65px', width: '65px' }} />
+          <img
+            src={logo}
+            alt='LP Creator Logo'
+            style={{ height: '65px', width: '65px' }}
+          />
         </Box>
         <Box sx={{ display: 'flex', gap: 2 }}>
           <Button
