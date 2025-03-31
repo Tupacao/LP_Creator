@@ -10,6 +10,17 @@ export default function PreCreator() {
   const [desc, setDesc] = useState('');
   const [url, setUrl] = useState('');
 
+  const isValid = () => {
+    if (
+      name.trim().length > 0 &&
+      desc.trim().length > 0 &&
+      url.trim().length > 0
+    ) {
+      return false;
+    }
+    return true;
+  };
+
   return (
     <>
       <Header />
@@ -66,7 +77,7 @@ export default function PreCreator() {
             <ButtonRedirect
               text='Salvar'
               href={`lp/${name}`}
-              able={name.trim().length < 3}
+              able={isValid()}
             />
           </Box>
         </Box>
