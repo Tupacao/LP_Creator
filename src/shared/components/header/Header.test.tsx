@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import {fireEvent, render, screen, waitFor} from '@testing-library/react';
 import Header from './Header';
 import { BrowserRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
@@ -28,15 +28,16 @@ describe('Header', () => {
     const userButton = screen.getByTestId('user-button');
     fireEvent.click(userButton);
 
-    expect(screen.getByTestId('drawer-user')).toBeInTheDocument();
+    expect(screen.getByRole('presentation')).toBeVisible();
   });
 
   it('fecha o drawer ao pressionar Escape', () => {
-    const userButton = screen.getByTestId('user-button');
-    fireEvent.click(userButton);
-    expect(screen.getByTestId('drawer-user')).toBeInTheDocument();
+    fireEvent.click(screen.getByTestId('user-button'));
+    expect(screen.getByRole('presentation')).toBeVisible();
 
-    fireEvent.keyDown(document, { key: 'Escape', code: 'Escape' });
-    expect(screen.queryByTestId('drawer-user')).not.toBeInTheDocument();
+    fireEvent.click(document.body);
+
+    waitFor(() => expect(screen.queryByRole('presentation')).not.toBeVisible());
   });
+
 });

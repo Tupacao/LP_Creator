@@ -13,18 +13,20 @@ describe('DadosUsuario Component', () => {
 
     test('closes the drawer when close button is clicked', () => {
         render(<DadosUsuario open={true} onClose={mockOnClose} />);
-        fireEvent.click(screen.getByRole('button', { name: /close/i }));
+        fireEvent.click(screen.getByRole('button', { name: /fechar/i }));
         expect(mockOnClose).toHaveBeenCalled();
     });
 
     test('toggles password visibility', () => {
         render(<DadosUsuario open={true} onClose={mockOnClose} />);
-        const toggleButton = screen.getByRole('button', { name: /toggle password/i });
-
+        const toggleButton = screen.getByRole('button', { name: /alternar visibilidade da senha/i });
         fireEvent.click(toggleButton);
+
+        // @ts-ignore
         expect(screen.getByDisplayValue('senha123').type).toBe('text');
 
         fireEvent.click(toggleButton);
+        // @ts-ignore
         expect(screen.getByDisplayValue('senha123').type).toBe('password');
     });
 

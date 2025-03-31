@@ -40,6 +40,7 @@ const DadosUsuario: React.FC<DadosUsuarioProps> = ({ open, onClose }) => {
                     <IconButton
                         onClick={onClose}
                         sx={{ color: 'primary.main' }}
+                        aria-label="fechar"
                     >
                         <FontAwesomeIcon icon={faTimes} />
                     </IconButton>
@@ -96,6 +97,7 @@ const DadosUsuario: React.FC<DadosUsuarioProps> = ({ open, onClose }) => {
                                 <IconButton
                                     onClick={toggleShowPassword}
                                     sx={{ color: 'primary.main' }}
+                                    aria-label="alternar visibilidade da senha"
                                 >
                                     <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
                                 </IconButton>
