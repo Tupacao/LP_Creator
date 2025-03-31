@@ -6,11 +6,10 @@ import ButtonRedirect from '../../shared/components/Button/ButtonRedirect';
 import { useState } from 'react';
 
 export default function PreCreator() {
-    
-    const [name, setName] = useState('');
-    const [desc, setDesc] = useState('');
-    const [url, setUrl] = useState('');
-  
+  const [name, setName] = useState('');
+  const [desc, setDesc] = useState('');
+  const [url, setUrl] = useState('');
+
   return (
     <>
       <Header />
@@ -64,7 +63,11 @@ export default function PreCreator() {
             />
           </Box>
           <Box width={'40%'}>
-            <ButtonRedirect text='Salvar' href={`lp/${name}`} />
+            <ButtonRedirect
+              text='Salvar'
+              href={`lp/${name}`}
+              able={name.trim().length < 3}
+            />
           </Box>
         </Box>
       </Box>
