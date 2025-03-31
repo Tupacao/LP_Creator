@@ -1,6 +1,6 @@
 import { Box, Link, Typography} from '@mui/material';
 import { useState } from 'react';
-import FormInput from '../../shared/components/Input/FormInput';
+import FormInput from '../../shared/components/FormInput/FormInput';
 import ButtonRedirect from '../../shared/components/Button/ButtonRedirect';
 
 function Login() {

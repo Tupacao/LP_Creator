@@ -33,7 +33,7 @@ const Header: React.FC = () => {
           </Button>
           <Button
             component={Link}
-            to='/creator'
+            to='/creator/data'
             sx={{ color: 'primary.main', textDecoration: 'none' }}
           >
             Creator
