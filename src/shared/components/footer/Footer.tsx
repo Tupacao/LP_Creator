@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Button, Container } from '@mui/material';
 
-const Footer: React.FC= () => {
+const Footer: React.FC = () => {
   return (
     <Box
       sx={{
@@ -29,7 +29,10 @@ const Footer: React.FC= () => {
               variant='body1'
               sx={{ color: 'background.default', marginTop: '8px' }}
             >
-              Para fazer com que ao clicar na logo seja redirecionado para a página inicial, você pode envolver a imagem da logo com o componente Link do react-router-dom. Aqui está como você pode fazer isso:
+              Para fazer com que ao clicar na logo seja redirecionado para a
+              página inicial, você pode envolver a imagem da logo com o
+              componente Link do react-router-dom. Aqui está como você pode
+              fazer isso:
             </Typography>
             <Button
               sx={{

@@ -2,13 +2,18 @@ import { TextField } from '@mui/material';
 import { ChangeEvent } from 'react';
 
 interface FormInputProps {
-    label: string;
-    type: string;
-    placeholder?: string;
-    functionOnChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  label: string;
+  type: string;
+  placeholder?: string;
+  functionOnChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function FormInput({label, type, placeholder, functionOnChange} : FormInputProps) {
+export default function FormInput({
+  label,
+  type,
+  placeholder,
+  functionOnChange,
+}: FormInputProps) {
   return (
     <>
       <TextField
