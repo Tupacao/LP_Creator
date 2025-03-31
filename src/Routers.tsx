@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Login from './pages/Login/Login';
-import Sites from './pages/sites/Sites';
 import Register from './pages/Register/Register';
+import Sites from "./pages/sites/Sites.tsx";
 import LPCreator from './pages/Creator/LPCreator';
 
 function Routers() {
@@ -13,7 +13,6 @@ function Routers() {
         <Route path='/register' element={<Register />} />
         <Route path='/home' element={<Home />} />
         <Route path='/sites' element={<Sites />} />
-        <Route path='/creator' element={<LPCreator />} />
         <Route path='/user' element={<h1>Dados do Usuário</h1>} />
         <Route path='*' element={<h1>Página não encontrada</h1>} />
       </Routes>
