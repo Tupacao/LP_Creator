@@ -22,7 +22,7 @@ describe('PreCreatro', () => {
   });
 
   test('Button Salvar should not be able', () => {
-    expect(screen.getByText('Salvar')).toBeDisabled();
+    expect(screen.getByText('Salvar')).toHaveAttribute('tabindex', '-1');
   });
 
   test('Button Salvar should be able', () => {
@@ -34,10 +34,7 @@ describe('PreCreatro', () => {
     fireEvent.change(descInput, { target: { value: 'Teste' } });
     fireEvent.change(logoInput, { target: { value: 'Teste' } });
 
-    expect(screen.getByText('Salvar')).not.toBeDisabled();
-    expect(screen.getByText('Salvar')).toHaveAttribute(
-      'href',
-      'lp/Teste',
-    );
+    expect(screen.getByText('Salvar')).toHaveAttribute('tabindex', '0');
+    expect(screen.getByText('Salvar')).toHaveAttribute('href', 'lp/Teste');
   });
 });
