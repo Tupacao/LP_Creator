@@ -1,5 +1,5 @@
 import { Box, Typography, Link, FormGroup } from '@mui/material';
-import FormInput from '../../shared/components/Input/FormInput';
+import FormInput from '../../shared/components/FormInput/FormInput';
 import ButtonRedirect from '../../shared/components/ButtonRedirect/ButtonRedirect';
 
 export default function Register() {

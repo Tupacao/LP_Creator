@@ -1,4 +1,4 @@
-import {fireEvent, render, screen, waitFor} from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import Header from './Header';
 import { BrowserRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
@@ -6,9 +6,9 @@ import '@testing-library/jest-dom';
 describe('Header', () => {
   beforeEach(() => {
     render(
-        <BrowserRouter>
-          <Header />
-        </BrowserRouter>
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>,
     );
   });
 
@@ -39,5 +39,4 @@ describe('Header', () => {
 
     waitFor(() => expect(screen.queryByRole('presentation')).not.toBeVisible());
   });
-
 });

@@ -6,9 +6,8 @@ import logo from '../../assets/lp_logo.png';
 import DadosUsuario from '../DadosUsuario/DadosUsuario';
 import { useState } from 'react';
 
-
 const Header: React.FC = () => {
-    const [drawerOpen, setDrawerOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <AppBar
@@ -42,7 +41,7 @@ const Header: React.FC = () => {
           </Button>
           <Button
             component={Link}
-            to='/creator'
+            to='/creator/data'
             sx={{ color: 'primary.main', textDecoration: 'none' }}
           >
             Creator
@@ -56,7 +55,11 @@ const Header: React.FC = () => {
           </Button>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-          <Button onClick={() => setDrawerOpen(true)} data-testid="user-button" sx={{ textDecoration: 'none' }}>
+          <Button
+            onClick={() => setDrawerOpen(true)}
+            data-testid='user-button'
+            sx={{ textDecoration: 'none' }}
+          >
             <Box
               sx={{
                 backgroundColor: 'primary.main',
@@ -73,7 +76,11 @@ const Header: React.FC = () => {
             </Box>
           </Button>
         </Box>
-          <DadosUsuario data-testid="drawer-user" open={drawerOpen} onClose={() => setDrawerOpen(false)} />
+        <DadosUsuario
+          data-testid='drawer-user'
+          open={drawerOpen}
+          onClose={() => setDrawerOpen(false)}
+        />
       </Toolbar>
     </AppBar>
   );
