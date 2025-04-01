@@ -28,7 +28,7 @@ export default function ElementFooter() {
           <Typography variant='h6' fontWeight={'bold'}>
             Atendimento Presencial
           </Typography>
-          <Typography fontSize={'16px'} width={"60%"}>
+          <Typography fontSize={'16px'} width={'60%'}>
             Rua Arminda de Lima, 285, Guarulhos On-line para todo o Brasil
           </Typography>
         </Box>

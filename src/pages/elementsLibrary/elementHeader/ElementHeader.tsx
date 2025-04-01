@@ -23,7 +23,7 @@ export default function ElementHeader() {
       >
         Transforme as suas Ideias em realidade com nossos móveis personalizados
       </Typography>
-      <Typography fontSize={"16px"} fontFamily={'Poppins, sans-serif'}>
+      <Typography fontSize={'16px'} fontFamily={'Poppins, sans-serif'}>
         Criamos móveis sob medida que refletem sua personalidade e atendem às
         suas necessidades. Cada peça é única, feita com materiais de alta
         qualidade e um cuidado excepcional em cada detalhe.
@@ -65,7 +65,7 @@ export default function ElementHeader() {
       >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, aliquam!
       </Typography>
-      <Typography fontSize={"16px"} fontFamily={'Poppins, sans-serif'}>
+      <Typography fontSize={'16px'} fontFamily={'Poppins, sans-serif'}>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
         deleniti omnis quas libero laboriosam vel? Perspiciatis harum facere
         laudantium sequi.

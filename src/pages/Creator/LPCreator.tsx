@@ -21,11 +21,11 @@ export default function LPCreator() {
   const [dataSection, setDataSection] = useState([
     { title: 'Section 1', color: false },
   ]);
-  
+
   const [activateType, setActiveType] = useState<String>('Header 0');
   const [indexClick, setIndexClick] = useState<number>(-1);
   const [elmentIndex, setElementIndex] = useState<number>(0);
-  
+
   const handleClickType = (title: String, index: number) => {
     setActiveType(title);
     setElementIndex(index);
@@ -191,16 +191,18 @@ export default function LPCreator() {
         }}
       >
         {indexClick == -1
-          ? elementHeader.map((item, index) => (
+          ? elementHeader.map((_item, index) => (
               <ChangeBox
                 key={index}
                 title={`Header ${index}`}
                 color={activateType == `Header ${index}`}
-                onClickFunction={() => handleClickType(`Header ${index}`, index)}
+                onClickFunction={() =>
+                  handleClickType(`Header ${index}`, index)
+                }
               />
             ))
           : indexClick == dataSection.length
-            ? elementFooter.map((item, index) => (
+            ? elementFooter.map((_item, index) => (
                 <ChangeBox
                   key={index}
                   title={`Footer ${index}`}
@@ -210,7 +212,7 @@ export default function LPCreator() {
                   }
                 />
               ))
-            : elementSection.map((item, index) => (
+            : elementSection.map((_item, index) => (
                 <ChangeBox
                   key={index}
                   title={`Section ${index}`}
