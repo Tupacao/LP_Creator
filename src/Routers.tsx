@@ -5,7 +5,6 @@ import Register from './pages/Register/Register';
 import Sites from './pages/sites/Sites.tsx';
 import LPCreator from './pages/Creator/LPCreator';
 import PreCreator from './pages/PreCreator/PreCreator';
-import ElementLibrary from './pages/elementsLibrary/ElementLibrary.tsx';
 
 function Routers() {
   return (
@@ -20,7 +19,7 @@ function Routers() {
         </Route>
         <Route path='/sites' element={<Sites />} />
         <Route path='/user' element={<h1>Dados do Usuário</h1>} />
-        <Route path='*' element={<ElementLibrary/>} />
+        <Route path='*' element={<h1>Página não encontrada</h1>} />
       </Routes>
     </BrowserRouter>
   );
