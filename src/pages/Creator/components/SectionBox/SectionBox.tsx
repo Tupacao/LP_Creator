@@ -25,6 +25,7 @@ export default function SectionBox({
         onClick={handleOpen}
         sx={{
           display: 'flex',
+          justifyContent: 'space-around',
           gap: '10px',
           alignItems: 'center',
           color: 'primary.main',
