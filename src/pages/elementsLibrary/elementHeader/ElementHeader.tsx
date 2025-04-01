@@ -5,6 +5,7 @@ import { Box, Button, Typography } from '@mui/material';
 export default function ElementHeader({ position }: { position: number }) {
   const header1 = (
     <Box
+      data-testid='header1'
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -44,6 +45,7 @@ export default function ElementHeader({ position }: { position: number }) {
 
   const header2 = (
     <Box
+      data-testid='header2'
       sx={{
         display: 'flex',
         flexDirection: 'column',

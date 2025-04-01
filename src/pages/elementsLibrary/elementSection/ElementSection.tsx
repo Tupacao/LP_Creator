@@ -3,6 +3,7 @@ import { Box, Button, Typography } from '@mui/material';
 export default function ElementSection({ position }: { position: number }) {
   const section1 = (
     <Box
+      data-testid='section1'
       sx={{
         px: 5,
         py: 10,
@@ -52,6 +53,7 @@ export default function ElementSection({ position }: { position: number }) {
 
   const section2 = (
     <Box
+      data-testid='section2'
       sx={{
         px: 5,
         py: 10,
@@ -107,7 +109,13 @@ export default function ElementSection({ position }: { position: number }) {
   );
 
   const section3 = (
-    <Box textAlign={'center'} py={10} width={'80%'} mx={'auto'}>
+    <Box
+      data-testid='section3'
+      textAlign={'center'}
+      py={10}
+      width={'80%'}
+      mx={'auto'}
+    >
       <Typography variant='h4' fontWeight={'bold'}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste cupiditate
         distinctio laboriosam sed mollitia voluptatem!
@@ -133,11 +141,19 @@ export default function ElementSection({ position }: { position: number }) {
   );
 
   const section4 = (
-    <Box py={10} px={5}>
+    <Box data-testid='section4' py={10} px={5}>
       <Typography></Typography>
       <Box display={'flex'} justifyContent={'center'} gap={4}>
-        <Box textAlign={'center'} p={5} border={'1px solid red'} width={"400px"} borderRadius={2}>
-          <Typography variant='h5' fontWeight={"bold"}>Lorem, ipsum dolor.</Typography>
+        <Box
+          textAlign={'center'}
+          p={5}
+          border={'1px solid red'}
+          width={'400px'}
+          borderRadius={2}
+        >
+          <Typography variant='h5' fontWeight={'bold'}>
+            Lorem, ipsum dolor.
+          </Typography>
           <Typography mt={2}>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,
             facilis.
@@ -155,8 +171,17 @@ export default function ElementSection({ position }: { position: number }) {
             SAIBA MAIS
           </Button>
         </Box>
-        <Box textAlign={'center'} p={5} border={'1px solid red'} width={"400px"} borderRadius={2} mt={-2}>
-          <Typography variant='h5' fontWeight={"bold"}>Lorem, ipsum dolor.</Typography>
+        <Box
+          textAlign={'center'}
+          p={5}
+          border={'1px solid red'}
+          width={'400px'}
+          borderRadius={2}
+          mt={-2}
+        >
+          <Typography variant='h5' fontWeight={'bold'}>
+            Lorem, ipsum dolor.
+          </Typography>
           <Typography mt={2}>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,
             facilis.
@@ -174,8 +199,16 @@ export default function ElementSection({ position }: { position: number }) {
             SAIBA MAIS
           </Button>
         </Box>
-        <Box textAlign={'center'} p={5} border={'1px solid red'} width={"400px"} borderRadius={2}>
-          <Typography variant='h5' fontWeight={"bold"}>Lorem, ipsum dolor.</Typography>
+        <Box
+          textAlign={'center'}
+          p={5}
+          border={'1px solid red'}
+          width={'400px'}
+          borderRadius={2}
+        >
+          <Typography variant='h5' fontWeight={'bold'}>
+            Lorem, ipsum dolor.
+          </Typography>
           <Typography mt={2}>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,
             facilis.

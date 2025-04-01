@@ -5,6 +5,7 @@ import { Box, Typography } from '@mui/material';
 export default function ElementFooter({ position }: { position: number }) {
   const footer1 = (
     <Box
+      data-testid='footer1'
       sx={{
         display: 'flex',
         justifyContent: 'space-around',
@@ -93,7 +94,15 @@ export default function ElementFooter({ position }: { position: number }) {
   );
 
   const footer2 = (
-    <Box display={'flex'} py={8} gap={2} flexDirection={'column'} width={"80%"} mx={'auto'}>
+    <Box
+      data-testid='footer2'
+      display={'flex'}
+      py={8}
+      gap={2}
+      flexDirection={'column'}
+      width={'80%'}
+      mx={'auto'}
+    >
       <Box
         sx={{
           display: 'flex',
@@ -110,20 +119,21 @@ export default function ElementFooter({ position }: { position: number }) {
           />
         </Box>
         <Box>
-          <Typography fontSize={"25px"} fontWeight={'bold'}>
+          <Typography fontSize={'25px'} fontWeight={'bold'}>
             Nossas redes Sociais
           </Typography>
           <Box>
-            <Typography fontSize={"20px"} fontWeight={'bold'}>
+            <Typography fontSize={'20px'} fontWeight={'bold'}>
               Atendimento Presencial
             </Typography>
-            <Typography fontSize={"16px"}>
-              Rua  Levindo Lopes, 357 - 5º e 12º Andar - Savassi, Belo Horizonte - MG, 30140-170
+            <Typography fontSize={'16px'}>
+              Rua Levindo Lopes, 357 - 5º e 12º Andar - Savassi, Belo Horizonte
+              - MG, 30140-170
             </Typography>
           </Box>
         </Box>
         <Box>
-          <Typography fontSize={"25px"} fontWeight={'bold'}>
+          <Typography fontSize={'25px'} fontWeight={'bold'}>
             Nossas redes Sociais
           </Typography>
           <Box display={'flex'} gap={2}>

@@ -5,9 +5,9 @@ import ElementSection from "./elementSection/ElementSection";
 export default function ElementLibrary() {
   return (
     <>
-      {/* <ElementHeader position={0}/> */}
-      {/* <ElementFooter position={0}/> */}
+      <ElementHeader position={0}/>
       <ElementSection position={3}/>
+      <ElementFooter position={1}/>
     </>
   );
 }
