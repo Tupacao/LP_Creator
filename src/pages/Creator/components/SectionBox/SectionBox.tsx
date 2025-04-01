@@ -30,7 +30,7 @@ export default function SectionBox({
           color: 'primary.main',
           padding: '10px',
           backgroundColor: color ? 'primary.light' : 'background.default',
-          width: '100px',
+          width: '120px',
           borderRadius: '4px',
           cursor:
             title != 'Footer' && title != 'Header' ? 'pointer' : 'default',

@@ -2,14 +2,10 @@ import ElementFooter from './elementFooter/ElementFooter';
 import ElementHeader from './elementHeader/ElementHeader';
 import ElementSection from './elementSection/ElementSection';
 
-// export default function ElementLibrary() {
-//   return (
-//     <>
-//       <ElementHeader position={0}/>
-//       <ElementSection position={3}/>
-//       <ElementFooter position={1}/>
-//     </>
-//   );
-// }
+const ElementLibrary = {
+  ElementHeader: ElementHeader(),
+  ElementFooter: ElementFooter(),
+  ElementSection: ElementSection(),
+};
 
-export default { ElementFooter, ElementHeader, ElementSection };
+export default ElementLibrary;

@@ -2,7 +2,7 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Button, Typography } from '@mui/material';
 
-export default function ElementHeader({ position }: { position: number }) {
+export default function ElementHeader() {
   const header1 = (
     <Box
       data-testid='header1'
@@ -12,18 +12,18 @@ export default function ElementHeader({ position }: { position: number }) {
         alignItems: 'start',
         py: 10,
         px: 5,
-        gap: 2,
+        gap: 1,
         width: '60%',
       }}
     >
       <Typography
-        variant='h3'
+        variant='h6'
         fontFamily={'Poppins, sans-serif'}
         fontWeight={'bold'}
       >
         Transforme as suas Ideias em realidade com nossos móveis personalizados
       </Typography>
-      <Typography variant='h6' fontFamily={'Poppins, sans-serif'}>
+      <Typography fontSize={"16px"} fontFamily={'Poppins, sans-serif'}>
         Criamos móveis sob medida que refletem sua personalidade e atendem às
         suas necessidades. Cada peça é única, feita com materiais de alta
         qualidade e um cuidado excepcional em cada detalhe.
@@ -35,7 +35,8 @@ export default function ElementHeader({ position }: { position: number }) {
           fontWeight: 'bold',
           backgroundColor: 'red',
           color: 'white',
-          padding: '10px 20px',
+          padding: '5px 10px',
+          fontSize: '12px',
         }}
       >
         ENTRE EM CONTATO
@@ -58,13 +59,13 @@ export default function ElementHeader({ position }: { position: number }) {
       }}
     >
       <Typography
-        variant='h3'
+        variant='h5'
         fontFamily={'Poppins, sans-serif'}
         fontWeight={'bold'}
       >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, aliquam!
       </Typography>
-      <Typography variant='h6' fontFamily={'Poppins, sans-serif'}>
+      <Typography fontSize={"16px"} fontFamily={'Poppins, sans-serif'}>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
         deleniti omnis quas libero laboriosam vel? Perspiciatis harum facere
         laudantium sequi.
@@ -75,7 +76,8 @@ export default function ElementHeader({ position }: { position: number }) {
           fontWeight: 'bold',
           backgroundColor: 'red',
           color: 'white',
-          padding: '10px 20px',
+          padding: '5px 10px',
+          fontSize: '12px',
         }}
       >
         ENTRE EM CONTATO
@@ -85,5 +87,5 @@ export default function ElementHeader({ position }: { position: number }) {
 
   const headerList = [header1, header2];
 
-  return <>{headerList[position] || header1}</>;
+  return headerList;
 }

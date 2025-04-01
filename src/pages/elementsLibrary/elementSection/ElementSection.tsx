@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from '@mui/material';
 
-export default function ElementSection({ position }: { position: number }) {
+export default function ElementSection() {
   const section1 = (
     <Box
       data-testid='section1'
@@ -14,14 +14,14 @@ export default function ElementSection({ position }: { position: number }) {
     >
       <Box width={'60%'}>
         <Box>
-          <Typography variant='h6' fontWeight={'bold'}>
+          <Typography fontSize={"18"} fontWeight={'bold'}>
             Lorem, ipsum dolor.
           </Typography>
-          <Typography variant='h3' fontWeight={'bold'}>
+          <Typography variant='h4' fontWeight={'bold'}>
             Lorem ipsum dolor sit.
           </Typography>
         </Box>
-        <Typography width={'80%'} mt={2}>
+        <Typography width={'80%'} mt={2} fontSize={"12"}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
           quidem. Mollitia voluptates veniam, iste dolor ut corporis est at ab
           consequatur modi totam obcaecati porro nemo nisi asperiores doloremque
@@ -44,8 +44,8 @@ export default function ElementSection({ position }: { position: number }) {
         <img
           src='https://amopaocaseiro.com.br/wp-content/uploads/2022/08/yt-069_pao-de-queijo_receita-840x560.jpg'
           alt='Placeholder'
-          width={600}
-          height={400}
+          width={300}
+          height={200}
         />
       </Box>
     </Box>
@@ -66,8 +66,8 @@ export default function ElementSection({ position }: { position: number }) {
         <img
           src='https://amopaocaseiro.com.br/wp-content/uploads/2022/08/yt-069_pao-de-queijo_receita-840x560.jpg'
           alt='Placeholder'
-          width={600}
-          height={400}
+          width={300}
+          height={200}
         />
       </Box>
       <Box
@@ -79,14 +79,14 @@ export default function ElementSection({ position }: { position: number }) {
         }}
       >
         <Box>
-          <Typography variant='h6' fontWeight={'bold'}>
+          <Typography fontSize={"18"} fontWeight={'bold'}>
             Lorem, ipsum dolor.
           </Typography>
-          <Typography variant='h3' fontWeight={'bold'}>
+          <Typography variant='h4' fontWeight={'bold'}>
             Lorem ipsum dolor sit.
           </Typography>
         </Box>
-        <Typography mt={2} textAlign={'right'} width={'80%'}>
+        <Typography mt={2} textAlign={'right'} width={'80%'} fontSize={"12"}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
           quidem. Mollitia voluptates veniam, iste dolor ut corporis est at ab
           consequatur modi totam obcaecati porro nemo nisi asperiores doloremque
@@ -116,11 +116,11 @@ export default function ElementSection({ position }: { position: number }) {
       width={'80%'}
       mx={'auto'}
     >
-      <Typography variant='h4' fontWeight={'bold'}>
+      <Typography variant='h5' fontWeight={'bold'}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste cupiditate
         distinctio laboriosam sed mollitia voluptatem!
       </Typography>
-      <Typography mt={2} width={'80%'} mx={'auto'} fontSize={18}>
+      <Typography mt={2} width={'80%'} mx={'auto'} fontSize={"18px"}>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam unde
         incidunt suscipit labore, eligendi animi deleniti voluptates adipisci
         nam voluptatem quasi rem id et in ea tenetur impedit quo? Veritatis?
@@ -145,16 +145,20 @@ export default function ElementSection({ position }: { position: number }) {
       <Typography></Typography>
       <Box display={'flex'} justifyContent={'center'} gap={4}>
         <Box
+          display={"flex"}
+          flexDirection={"column"}
+          alignItems={"center"}
+          justifyContent={"center"}
           textAlign={'center'}
-          p={5}
+          p={2}
           border={'1px solid red'}
-          width={'400px'}
+          height={"200px"}
           borderRadius={2}
         >
-          <Typography variant='h5' fontWeight={'bold'}>
+          <Typography variant='h6' fontWeight={'bold'}>
             Lorem, ipsum dolor.
           </Typography>
-          <Typography mt={2}>
+          <Typography mt={2} fontSize={"12px"}>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,
             facilis.
           </Typography>
@@ -162,27 +166,33 @@ export default function ElementSection({ position }: { position: number }) {
             sx={{
               mt: 2,
               fontFamily: 'Poppins, sans-serif',
+              fontSize: "12px",
               fontWeight: 'bold',
               backgroundColor: 'red',
               color: 'white',
-              padding: '10px 20px',
+              padding: '5px 10px',
+              width: "60%"
             }}
           >
             SAIBA MAIS
           </Button>
         </Box>
         <Box
+          display={"flex"}
+          flexDirection={"column"}
+          alignItems={"center"}
+          justifyContent={"center"}
           textAlign={'center'}
-          p={5}
+          p={2}
           border={'1px solid red'}
-          width={'400px'}
+          height={"200px"}
           borderRadius={2}
           mt={-2}
         >
-          <Typography variant='h5' fontWeight={'bold'}>
+          <Typography variant='h6' fontWeight={'bold'}>
             Lorem, ipsum dolor.
           </Typography>
-          <Typography mt={2}>
+          <Typography mt={2} fontSize={"12px"}>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,
             facilis.
           </Typography>
@@ -190,26 +200,32 @@ export default function ElementSection({ position }: { position: number }) {
             sx={{
               mt: 2,
               fontFamily: 'Poppins, sans-serif',
+              fontSize: "12px",
               fontWeight: 'bold',
               backgroundColor: 'red',
               color: 'white',
-              padding: '10px 20px',
+              padding: '5px 10px',
+              width: "60%"
             }}
           >
             SAIBA MAIS
           </Button>
         </Box>
         <Box
+          display={"flex"}
+          flexDirection={"column"}
+          alignItems={"center"}
+          justifyContent={"center"}
           textAlign={'center'}
-          p={5}
+          p={2}
           border={'1px solid red'}
-          width={'400px'}
+          height={"200px"}
           borderRadius={2}
         >
-          <Typography variant='h5' fontWeight={'bold'}>
+          <Typography variant='h6' fontWeight={'bold'}>
             Lorem, ipsum dolor.
           </Typography>
-          <Typography mt={2}>
+          <Typography mt={2} fontSize={"12px"}>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,
             facilis.
           </Typography>
@@ -217,10 +233,12 @@ export default function ElementSection({ position }: { position: number }) {
             sx={{
               mt: 2,
               fontFamily: 'Poppins, sans-serif',
+              fontSize: "12px",
               fontWeight: 'bold',
               backgroundColor: 'red',
               color: 'white',
-              padding: '10px 20px',
+              padding: '5px 10px',
+              width: "60%"
             }}
           >
             SAIBA MAIS
@@ -232,5 +250,5 @@ export default function ElementSection({ position }: { position: number }) {
 
   const sectionList = [section1, section2, section3, section4];
 
-  return <>{sectionList[position] || section1}</>;
+  return sectionList
 }
