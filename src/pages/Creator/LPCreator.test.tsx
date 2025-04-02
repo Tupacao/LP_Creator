@@ -59,13 +59,21 @@ describe('LPCreator', () => {
     expect(buttonChange).toBeInTheDocument();
 
     await waitFor(() => {
-      expect(screen.getByText('Transforme as suas Ideias em realidade com nossos móveis personalizados')).toBeInTheDocument();
+      expect(
+        screen.getByText(
+          'Transforme as suas Ideias em realidade com nossos móveis personalizados',
+        ),
+      ).toBeInTheDocument();
     });
 
     fireEvent.click(buttonChange);
 
     await waitFor(() => {
-      expect(screen.getByText('Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, aliquam!')).toBeInTheDocument();
+      expect(
+        screen.getByText(
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, aliquam!',
+        ),
+      ).toBeInTheDocument();
     });
   });
 });

@@ -10,7 +10,7 @@ const style = {
   px: 5,
   width: '60%',
   gap: 1,
-}
+};
 
 export default function ElementHeader() {
   const header1 = (

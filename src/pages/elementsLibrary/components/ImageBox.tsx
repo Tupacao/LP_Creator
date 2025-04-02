@@ -1,6 +1,12 @@
-import { Box } from "@mui/material";
+import { Box } from '@mui/material';
 
-export default function ImageBox({ width, height }: { width: number; height: number }) {
+export default function ImageBox({
+  width,
+  height,
+}: {
+  width: number;
+  height: number;
+}) {
   return (
     <Box>
       <img

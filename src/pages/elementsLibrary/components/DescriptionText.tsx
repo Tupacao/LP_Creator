@@ -1,17 +1,20 @@
-import { Typography } from "@mui/material";
+import { Typography } from '@mui/material';
 
 interface DescriptionTextProps {
   descriptionText: string;
-    isStrong?: boolean;
+  isStrong?: boolean;
 }
 
-export default function DescriptionText({descriptionText, isStrong = false}:  DescriptionTextProps) {
+export default function DescriptionText({
+  descriptionText,
+  isStrong = false,
+}: DescriptionTextProps) {
   return (
     <Typography
       fontSize={'16px'}
       fontFamily={'Poppins, sans-serif'}
       fontWeight={isStrong ? 'bold' : 'normal'}
-    >   
+    >
       {descriptionText}
     </Typography>
   );

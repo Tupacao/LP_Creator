@@ -1,8 +1,8 @@
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "@mui/material";
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button } from '@mui/material';
 
-export default function ButtonText({hasIcon}: { hasIcon: boolean }) {
+export default function ButtonText({ hasIcon }: { hasIcon: boolean }) {
   return (
     <Button
       endIcon={hasIcon ? <FontAwesomeIcon icon={faPhone} /> : null}

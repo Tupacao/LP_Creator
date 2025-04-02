@@ -3,7 +3,13 @@ import TittleText from '../components/TittleText';
 import DescriptionText from '../components/DescriptionText';
 import IconBox from './components/IconBox';
 import MapBox from './components/MapBox';
-import ImageBox from '../elementSection/component/ImageBox';
+import ImageBox from '../components/ImageBox';
+
+const style = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 2,
+};
 
 export default function ElementFooter() {
   const footer1 = (
@@ -14,14 +20,11 @@ export default function ElementFooter() {
         justifyContent: 'space-around',
         mx: 'auto',
         alignItems: 'center',
-        py: 8
       }}
     >
       <Box
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 2
+          ...style,
         }}
       >
         <TittleText titleText='Entre em Contato' />
@@ -52,10 +55,7 @@ export default function ElementFooter() {
     <Box
       data-testid='footer2'
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 2,
-        py: 2,
+        ...style,
         mx: 'auto',
         width: '80%',
       }}
@@ -79,10 +79,7 @@ export default function ElementFooter() {
           />
         </Box>
         <Box>
-          <DescriptionText
-            descriptionText='Redes Sociais'
-            isStrong={true}
-          />
+          <DescriptionText descriptionText='Redes Sociais' isStrong={true} />
           <Box display={'flex'} gap={2}>
             <IconBox />
             <IconBox />

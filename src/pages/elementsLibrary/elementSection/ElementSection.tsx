@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import TittleText from '../components/TittleText';
 import DescriptionText from '../components/DescriptionText';
 import ButtonText from '../components/ButtonText';
-import ImageBox from './component/ImageBox';
+import ImageBox from '../components/ImageBox';
 import TextBox from './component/TextBox';
 
 const style_outBox = {
