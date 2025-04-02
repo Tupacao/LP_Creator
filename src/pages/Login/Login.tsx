@@ -1,7 +1,7 @@
 import { Box, Link, Typography } from '@mui/material';
 import { useState } from 'react';
-import FormInput from '../../shared/components/FormInput/FormInput';
-import ButtonRedirect from '../../shared/components/ButtonRedirect/ButtonRedirect';
+import FormInput from '../../shared/components/formInput/FormInput';
+import ButtonRedirect from '../../shared/components/buttonRedirect/ButtonRedirect';
 
 function Login() {
   const [email, setEmail] = useState(String);

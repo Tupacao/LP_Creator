@@ -1,16 +1,16 @@
+import { useState } from 'react';
 import { Box, Button } from '@mui/material';
-import Footer from '../../shared/components/footer/Footer';
-import Header from '../../shared/components/header/Header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAngleLeft,
   faAngleRight,
   faPlus,
 } from '@fortawesome/free-solid-svg-icons';
-import SectionBox from './components/SectionBox/SectionBox';
-import ChangeBox from './components/ChangeBox/ChangeBox';
-import { useState } from 'react';
-import ModalButton from './components/ModalButton/ModalButton';
+import Footer from '../../shared/components/footer/Footer';
+import Header from '../../shared/components/header/Header';
+import ChangeBox from '../creator/components/changeBox/ChangeBox';
+import SectionBox from '../creator/components/sectionBox/SectionBox';
+import ModalButton from '../creator/components/modalButton/ModalButton';
 import ElementLibrary from '../elementsLibrary/ElementLibrary';
 
 const elementFooter = Object.values(ElementLibrary.ElementFooter);
