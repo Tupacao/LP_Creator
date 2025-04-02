@@ -1,11 +1,11 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import TittleText from '../components/TittleText';
 import DescriptionText from '../components/DescriptionText';
 import ButtonText from '../components/ButtonText';
 import ImageBox from './component/ImageBox';
-import BoxText from './component/BoxText';
+import TextBox from './component/TextBox';
 
-const style = {
+const style_outBox = {
   px: 5,
   py: 10,
   display: 'flex',
@@ -13,21 +13,24 @@ const style = {
   justifyContent: 'space-between',
 };
 
+const style_innerBox = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 1,
+};
+
 export default function ElementSection() {
   const section1 = (
     <Box
       data-testid='section1'
       sx={{
-        ...style,
+        ...style_outBox,
       }}
     >
       <Box
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 1,
+          ...style_innerBox,
           alignItems: 'start',
-          width: '60%',
         }}
       >
         <Box>
@@ -53,18 +56,16 @@ export default function ElementSection() {
     <Box
       data-testid='section2'
       sx={{
-        ...style,
+        ...style_outBox,
       }}
     >
       <ImageBox width={300} height={200} />
       <Box
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
+          ...style_innerBox,
+          width: '60%',
           alignItems: 'flex-end',
           textAlign: 'right',
-          gap: 1,
-          width: '60%',
         }}
       >
         <Box>
@@ -89,11 +90,9 @@ export default function ElementSection() {
     <Box
       data-testid='section3'
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
+        ...style_innerBox,
         alignItems: 'center',
         textAlign: 'center',
-        gap: 1,
         mx: 'auto',
         width: '80%',
       }}
@@ -113,12 +112,18 @@ export default function ElementSection() {
 
   const section4 = (
     <Box data-testid='section4' py={10} px={5}>
-      <Box display={'flex'} justifyContent={'center'} gap={4}>
-        <BoxText />
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: 3,
+        }}
+      >
+        <TextBox />
         <Box mt={-1}>
-          <BoxText />
+          <TextBox />
         </Box>
-        <BoxText />
+        <TextBox />
       </Box>
     </Box>
   );

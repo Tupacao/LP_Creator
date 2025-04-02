@@ -3,7 +3,7 @@ import ButtonText from "../../components/ButtonText";
 import DescriptionText from "../../components/DescriptionText";
 import TittleText from "../../components/TittleText";
 
-export default function BoxText() {
+export default function TextBox() {
   return (
     <Box
         sx={{
