@@ -10,7 +10,5 @@ describe('ElementFooter', () => {
 
     expect(footer[0]).toHaveAttribute('data-testid', 'footer1');
     expect(footer[1]).toHaveAttribute('data-testid', 'footer2');
-
   });
-
 });

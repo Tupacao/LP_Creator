@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 
 export default function IconBox() {
   return (
-    <Box 
+    <Box
       data-testid='icon-box'
       sx={{
         display: 'flex',

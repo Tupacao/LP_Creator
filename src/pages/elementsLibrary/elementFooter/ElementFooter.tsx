@@ -100,7 +100,7 @@ export default function ElementFooter() {
 
   const footerList = [
     <React.Fragment key='footer1'>{footer1}</React.Fragment>,
-    <React.Fragment key='footer2'>{footer2}</React.Fragment>
+    <React.Fragment key='footer2'>{footer2}</React.Fragment>,
   ];
 
   return footerList;

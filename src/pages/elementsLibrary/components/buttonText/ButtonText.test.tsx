@@ -5,7 +5,7 @@ describe('ButtonText', () => {
   test('ButtonText renders correctly with icon', () => {
     render(<ButtonText hasIcon={true} />);
 
-    const button = screen.getByRole('button')
+    const button = screen.getByRole('button');
     expect(button).toBeInTheDocument();
     expect(button).toHaveTextContent('ENTRE EM CONTATO');
 
@@ -15,11 +15,10 @@ describe('ButtonText', () => {
   test('ButtonText renders correctly without icon', () => {
     render(<ButtonText hasIcon={false} />);
 
-    const button = screen.getByRole('button')
+    const button = screen.getByRole('button');
     expect(button).toBeInTheDocument();
     expect(button).toHaveTextContent('ENTRE EM CONTATO');
 
     expect(screen.queryByTestId('font-icon')).toBeNull();
-
   });
 });

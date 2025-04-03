@@ -130,10 +130,10 @@ export default function ElementSection() {
   );
 
   const sectionList = [
-    <React.Fragment key="section1">{section1}</React.Fragment>,
-    <React.Fragment key="section2">{section2}</React.Fragment>,
-    <React.Fragment key="section3">{section3}</React.Fragment>,
-    <React.Fragment key="section4">{section4}</React.Fragment>,
+    <React.Fragment key='section1'>{section1}</React.Fragment>,
+    <React.Fragment key='section2'>{section2}</React.Fragment>,
+    <React.Fragment key='section3'>{section3}</React.Fragment>,
+    <React.Fragment key='section4'>{section4}</React.Fragment>,
   ];
 
   return sectionList;

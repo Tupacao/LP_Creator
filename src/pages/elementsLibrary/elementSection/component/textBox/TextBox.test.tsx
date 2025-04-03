@@ -12,5 +12,4 @@ describe('TextBox', () => {
     ).toBeInTheDocument();
     expect(screen.getByText('ENTRE EM CONTATO')).toBeInTheDocument();
   });
-
 });
