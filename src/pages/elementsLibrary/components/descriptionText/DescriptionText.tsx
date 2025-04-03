@@ -11,6 +11,7 @@ export default function DescriptionText({
 }: DescriptionTextProps) {
   return (
     <Typography
+      data-testid='description-text'
       fontSize={'16px'}
       fontFamily={'Poppins, sans-serif'}
       fontWeight={isStrong ? 'bold' : 'normal'}

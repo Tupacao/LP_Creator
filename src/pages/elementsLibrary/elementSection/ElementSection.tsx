@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
-import TittleText from '../components/TittleText';
-import DescriptionText from '../components/DescriptionText';
-import ButtonText from '../components/ButtonText';
-import ImageBox from '../components/ImageBox';
+import TittleText from '../components/tittleText/TittleText';
+import DescriptionText from '../components/descriptionText/DescriptionText';
+import ButtonText from '../components/buttonText/ButtonText';
+import ImageBox from '../components/imageBox/ImageBox';
 import TextBox from './component/textBox/TextBox';
 import React from 'react';
 

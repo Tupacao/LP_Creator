@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 export default function ButtonText({ hasIcon }: { hasIcon: boolean }) {
   return (
     <Button
-      endIcon={hasIcon ? <FontAwesomeIcon icon={faPhone} /> : null}
+      endIcon={hasIcon ? <FontAwesomeIcon data-testid='font-icon' icon={faPhone} /> : null}
       sx={{
         fontFamily: 'Poppins, sans-serif',
         fontWeight: 'bold',

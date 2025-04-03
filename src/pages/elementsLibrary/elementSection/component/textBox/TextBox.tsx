@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
-import ButtonText from '../../../components/ButtonText';
-import DescriptionText from '../../../components/DescriptionText';
-import TittleText from '../../../components/TittleText';
+import ButtonText from '../../../components/buttonText/ButtonText';
+import DescriptionText from '../../../components/descriptionText/DescriptionText';
+import TittleText from '../../../components/tittleText/TittleText';
 
 export default function TextBox() {
   return (

@@ -1,9 +1,9 @@
 import { Box } from '@mui/material';
-import TittleText from '../components/TittleText';
-import DescriptionText from '../components/DescriptionText';
+import TittleText from '../components/tittleText/TittleText';
+import DescriptionText from '../components/descriptionText/DescriptionText';
 import IconBox from './components/iconBox/IconBox';
 import MapBox from './components/mapBox/MapBox';
-import ImageBox from '../components/ImageBox';
+import ImageBox from '../components/imageBox/ImageBox';
 import React from 'react';
 
 const style = {
