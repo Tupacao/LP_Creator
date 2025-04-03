@@ -3,7 +3,8 @@ import TittleText from '../components/TittleText';
 import DescriptionText from '../components/DescriptionText';
 import ButtonText from '../components/ButtonText';
 import ImageBox from '../components/ImageBox';
-import TextBox from './component/TextBox';
+import TextBox from './component/textBox/TextBox';
+import React from 'react';
 
 const style_outBox = {
   px: 5,
@@ -128,7 +129,12 @@ export default function ElementSection() {
     </Box>
   );
 
-  const sectionList = [section1, section2, section3, section4];
+  const sectionList = [
+    <React.Fragment key="section1">{section1}</React.Fragment>,
+    <React.Fragment key="section2">{section2}</React.Fragment>,
+    <React.Fragment key="section3">{section3}</React.Fragment>,
+    <React.Fragment key="section4">{section4}</React.Fragment>,
+  ];
 
   return sectionList;
 }
