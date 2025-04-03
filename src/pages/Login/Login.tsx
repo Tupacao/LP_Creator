@@ -2,7 +2,7 @@ import { Box, Link, Typography } from '@mui/material';
 import { useState } from 'react';
 import FormInput from '../../shared/components/FormInput/FormInput';
 import ButtonRedirect from '../../shared/components/ButtonRedirect/ButtonRedirect';
-import { useLogin } from '../../shared/services/authService';
+import { useLogin } from '../../shared/services/AuthService.ts';
 import { useNavigate } from 'react-router-dom';
 import { Alert } from '@mui/material';
 

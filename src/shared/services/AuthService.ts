@@ -50,9 +50,9 @@ export const useLogin = () => {
     );
 };
 
-const authService = {
+const AuthService = {
     useRegister,
     useLogin,
 };
 
-export default authService;
+export default AuthService;

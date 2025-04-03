@@ -1,16 +1,22 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "João Silva",
       "email": "joao@exemplo.com",
       "senha": "123456"
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Maria Souza",
       "email": "maria@exemplo.com",
       "senha": "abcdef"
+    },
+    {
+      "id": "4ed0",
+      "nome": "guilherme",
+      "email": "guilherme@email.com",
+      "senha": "12345"
     }
   ],
   "sites": []
