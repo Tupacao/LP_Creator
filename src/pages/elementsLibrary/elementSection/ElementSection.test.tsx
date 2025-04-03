@@ -7,11 +7,6 @@ describe('ElementSection', () => {
     
     const section = screen.getAllByTestId(/section/); 
     expect(section.length).toBe(4);
-
-    expect(screen.getByTestId('section1')).toBeInTheDocument();
-    expect(screen.getByTestId('section2')).toBeInTheDocument();
-    expect(screen.getByTestId('section3')).toBeInTheDocument();
-    expect(screen.getByTestId('section4')).toBeInTheDocument();
     
     expect(section[0]).toHaveAttribute('data-testid', 'section1');
     expect(section[1]).toHaveAttribute('data-testid', 'section2');

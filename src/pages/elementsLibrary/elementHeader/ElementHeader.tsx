@@ -2,6 +2,7 @@ import { Box } from '@mui/material';
 import TittleText from '../components/TittleText';
 import DescriptionText from '../components/DescriptionText';
 import ButtonText from '../components/ButtonText';
+import React from 'react';
 
 const style = {
   display: 'flex',
@@ -51,7 +52,10 @@ export default function ElementHeader() {
     </Box>
   );
 
-  const headerList = [header1, header2];
+  const headerList = [
+    <React.Fragment key='header1'>{header1}</React.Fragment>,
+    <React.Fragment key='header2'>{header2}</React.Fragment>,
+  ];
 
   return headerList;
 }

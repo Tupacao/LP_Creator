@@ -5,10 +5,13 @@ describe('ElementHeader', () => {
   test('should render correctly', () => {
     render(<ElementHeader />);
 
-    expect(screen.getByTestId('header1')).toBeInTheDocument();
+    const header = screen.getAllByTestId(/header/); 
 
-    render(<ElementHeader />);
+    expect(header.length).toBe(2);
 
-    expect(screen.getByTestId('header2')).toBeInTheDocument();
+    expect(header[0]).toHaveAttribute('data-testid', 'header1');
+    expect(header[1]).toHaveAttribute('data-testid', 'header2');
+
   });
+
 });
