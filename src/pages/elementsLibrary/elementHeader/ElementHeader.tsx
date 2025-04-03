@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import TittleText from '../components/tittleText/TittleText';
+import TitleText from '../components/titleText/TitleText';
 import DescriptionText from '../components/descriptionText/DescriptionText';
 import ButtonText from '../components/buttonText/ButtonText';
 import React from 'react';
@@ -22,7 +22,7 @@ export default function ElementHeader() {
         alignItems: 'start',
       }}
     >
-      <TittleText titleText='Transforme as suas Ideias em realidade com nossos móveis personalizados' />
+      <TitleText titleText='Transforme as suas Ideias em realidade com nossos móveis personalizados' />
       <DescriptionText
         descriptionText='Criamos móveis sob medida que refletem sua personalidade e atendem às
         suas necessidades. Cada peça é única, feita com materiais de alta
@@ -42,7 +42,7 @@ export default function ElementHeader() {
         textAlign: 'center',
       }}
     >
-      <TittleText titleText='Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, aliquam!' />
+      <TitleText titleText='Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, aliquam!' />
       <DescriptionText
         descriptionText='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
         deleniti omnis quas libero laboriosam vel? Perspiciatis harum facere

@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import TittleText from '../components/tittleText/TittleText';
+import TitleText from '../components/titleText/TitleText';
 import DescriptionText from '../components/descriptionText/DescriptionText';
 import ButtonText from '../components/buttonText/ButtonText';
 import ImageBox from '../components/imageBox/ImageBox';
@@ -39,7 +39,7 @@ export default function ElementSection() {
             descriptionText='Lorem ipsum dolor sit.'
             isStrong={true}
           />
-          <TittleText titleText='Lorem ipsum dolor sit.' />
+          <TitleText titleText='Lorem ipsum dolor sit.' />
         </Box>
         <DescriptionText
           descriptionText='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
@@ -74,7 +74,7 @@ export default function ElementSection() {
             descriptionText='Lorem ipsum dolor sit.'
             isStrong={true}
           />
-          <TittleText titleText='Lorem ipsum dolor sit.' />
+          <TitleText titleText='Lorem ipsum dolor sit.' />
         </Box>
         <DescriptionText
           descriptionText='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
@@ -98,7 +98,7 @@ export default function ElementSection() {
         width: '80%',
       }}
     >
-      <TittleText
+      <TitleText
         titleText='Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste cupiditate
         distinctio laboriosam sed mollitia voluptatem!'
       />

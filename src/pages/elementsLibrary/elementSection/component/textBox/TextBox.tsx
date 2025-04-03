@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import ButtonText from '../../../components/buttonText/ButtonText';
 import DescriptionText from '../../../components/descriptionText/DescriptionText';
-import TittleText from '../../../components/tittleText/TittleText';
+import TitleText from '../../../components/titleText/TitleText';
 
 export default function TextBox() {
   return (
@@ -18,7 +18,7 @@ export default function TextBox() {
         borderRadius: 2,
       }}
     >
-      <TittleText titleText='Lorem, ipsum dolor.' />
+      <TitleText titleText='Lorem, ipsum dolor.' />
       <DescriptionText descriptionText='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,' />
       <ButtonText hasIcon={false} />
     </Box>

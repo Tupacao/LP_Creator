@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import TittleText from '../components/tittleText/TittleText';
+import TitleText from '../components/titleText/TitleText';
 import DescriptionText from '../components/descriptionText/DescriptionText';
 import IconBox from './components/iconBox/IconBox';
 import MapBox from './components/mapBox/MapBox';
@@ -28,7 +28,7 @@ export default function ElementFooter() {
           ...style,
         }}
       >
-        <TittleText titleText='Entre em Contato' />
+        <TitleText titleText='Entre em Contato' />
         <Box width={'60%'}>
           <DescriptionText
             descriptionText='Atendimento Presencial'

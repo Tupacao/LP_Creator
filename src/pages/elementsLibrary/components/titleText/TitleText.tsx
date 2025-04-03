@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 
-export default function TittleText({ titleText }: { titleText: string }) {
+export default function TitleText({ titleText }: { titleText: string }) {
   return (
     <Typography
       variant='h5'
