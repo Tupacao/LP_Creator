@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { useMutation, useQueryClient } from 'react-query';
 
 const API_URL = 'http://localhost:3001';
 
@@ -10,49 +9,35 @@ interface UserData {
     senha: string;
 }
 
-// Função para registrar um usuário
-export const useRegister = () => {
-    const queryClient = useQueryClient();
-    return useMutation(
-        async (userData: { nome: string; email: string; senha: string }): Promise<UserData> => {
-            const response = await axios.post<UserData>(`${API_URL}/users`, userData);
-            return response.data;
-        },
-        {
-            onSuccess: () => {
-                queryClient.invalidateQueries('users');
-            },
-        }
-    );
+const register = async (userData: { nome: string; email: string; senha: string }): Promise<UserData> => {
+    // eslint-disable-next-line no-useless-catch
+    try {
+        const response = await axios.post<UserData>(`${API_URL}/users`, userData);
+        return response.data;
+    } catch (error: any) {
+        throw error;
+    }
 };
 
-// Função para fazer login (alterada para useMutation)
-export const useLogin = () => {
-    return useMutation(
-        async (credentials: { email: string; senha: string }): Promise<UserData | null> => {
-            const { email, senha } = credentials;
+const login = async (credentials: { email: string; senha: string }): Promise<UserData> => {
+    // eslint-disable-next-line no-useless-catch
+    try {
+        const response = await axios.get<UserData[]>(`${API_URL}/users?email=${credentials.email}`);
+        const user = response.data[0];
 
-            if (!email || !senha) return null;
-
-            // eslint-disable-next-line no-useless-catch
-            try {
-                const response = await axios.get<UserData[]>(`${API_URL}/users?email=${email}`);
-                const user = response.data[0];
-
-                if (user && user.senha === senha) {
-                    return user;
-                }
-                throw new Error('Credenciais inválidas.');
-            } catch (error) {
-                throw error;
-            }
+        if (user && user.senha === credentials.senha) {
+            return user;
+        } else {
+            throw new Error('Credenciais inválidas.');
         }
-    );
+    } catch (error: any) {
+        throw error;
+    }
 };
 
 const AuthService = {
-    useRegister,
-    useLogin,
+    register,
+    login,
 };
 
 export default AuthService;

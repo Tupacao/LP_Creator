@@ -2,8 +2,8 @@ import { Box, Link, Typography, Alert } from '@mui/material';
 import { useState } from 'react';
 import FormInput from '../../shared/components/FormInput/FormInput';
 import ButtonRedirect from '../../shared/components/ButtonRedirect/ButtonRedirect';
-import { useRegister } from '../../shared/services/AuthService.ts';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../app/AuthContext'; // Importe o useAuth
 
 export default function Register() {
     const [nome, setNome] = useState('');
@@ -11,11 +11,10 @@ export default function Register() {
     const [senha, setSenha] = useState('');
     const [confirmSenha, setConfirmSenha] = useState('');
     const [error, setError] = useState('');
+    const { register, isLoading } = useAuth(); // Use a função register do AuthContext
     const navigate = useNavigate();
 
-    const {mutate: register, isLoading} = useRegister();
-
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setError('');
 
@@ -29,11 +28,12 @@ export default function Register() {
             return;
         }
 
-        register({nome, email, senha}, {
-            onSuccess: () => {
-                navigate('/home');
-            }
-        });
+        try {
+            await register({ nome, email, senha }); // Chame a função register do AuthContext
+            navigate('/login'); // Redireciona para a página de login após o registro
+        } catch (error: any) {
+            setError(error.message || 'Ocorreu um erro ao criar a conta.'); // Exiba a mensagem de erro do AuthContext
+        }
     };
 
     return (
@@ -59,7 +59,7 @@ export default function Register() {
                     backgroundColor: 'primary.light',
                     borderRadius: '10px',
                     padding: '20px',
-                    mt: {desktop: '100px', mobile: '10px'},
+                    mt: { desktop: '100px', mobile: '10px' },
                 }}
             >
                 <Typography
@@ -72,7 +72,7 @@ export default function Register() {
                 </Typography>
 
                 {error && (
-                    <Alert severity="error" sx={{width: '100%'}}>
+                    <Alert severity="error" sx={{ width: '100%' }}>
                         {error}
                     </Alert>
                 )}
@@ -127,7 +127,7 @@ export default function Register() {
                     href='/login'
                     textAlign={'center'}
                     fontWeight={'bold'}
-                    sx={{fontWeight: 'bold', fontSize: '16px'}}
+                    sx={{ fontWeight: 'bold', fontSize: '16px' }}
                 >
                     Já tem uma conta? Faça login
                 </Link>
@@ -141,7 +141,7 @@ export default function Register() {
                     backgroundColor: 'primary.light',
                     width: '400px',
                     height: '400px',
-                    mb: {desktop: '100px', mobile: '10px'},
+                    mb: { desktop: '100px', mobile: '10px' },
                 }}
             >
                 <img
@@ -153,4 +153,4 @@ export default function Register() {
             </Box>
         </Box>
     );
-};
+}

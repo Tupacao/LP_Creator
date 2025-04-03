@@ -19,8 +19,8 @@
     "@mui/material": "^6.4.8",
     "@tailwindcss/vite": "^4.0.14",
     "axios": "^1.8.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-mock-component": "^4.1.1",
     "react-query": "^3.39.3",
     "react-router-dom": "^7.4.0"
