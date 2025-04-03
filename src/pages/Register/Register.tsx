@@ -55,7 +55,7 @@ export default function Register() {
           </FormGroup>
           <ButtonRedirect text='Criar conta' href='/home' />
           <Link
-            href='/login'
+            href='/'
             textAlign={'center'}
             fontWeight={'bold'}
             sx={{ fontWeight: 'bold', fontSize: '16px' }}
