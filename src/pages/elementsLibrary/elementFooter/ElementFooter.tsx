@@ -1,9 +1,10 @@
 import { Box } from '@mui/material';
 import TittleText from '../components/TittleText';
 import DescriptionText from '../components/DescriptionText';
-import IconBox from './components/IconBox';
-import MapBox from './components/MapBox';
+import IconBox from './components/iconBox/IconBox';
+import MapBox from './components/mapBox/MapBox';
 import ImageBox from '../components/ImageBox';
+import React from 'react';
 
 const style = {
   display: 'flex',
@@ -97,7 +98,10 @@ export default function ElementFooter() {
     </Box>
   );
 
-  const footerList = [footer1, footer2];
+  const footerList = [
+    <React.Fragment key='footer1'>{footer1}</React.Fragment>,
+    <React.Fragment key='footer2'>{footer2}</React.Fragment>
+  ];
 
   return footerList;
 }

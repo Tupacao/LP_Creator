@@ -5,10 +5,12 @@ describe('ElementFooter', () => {
   test('should render correctly', () => {
     render(<ElementFooter />);
 
-    expect(screen.getByTestId('footer1')).toBeInTheDocument();
+    const footer = screen.getAllByTestId(/footer/);
+    expect(footer).toHaveLength(2);
 
-    render(<ElementFooter />);
+    expect(footer[0]).toHaveAttribute('data-testid', 'footer1');
+    expect(footer[1]).toHaveAttribute('data-testid', 'footer2');
 
-    expect(screen.getByTestId('footer2')).toBeInTheDocument();
   });
+
 });
