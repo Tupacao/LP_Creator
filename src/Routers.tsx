@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login.tsx';
-import Register from './pages/Register/Register';
+import Register from './pages/register/Register';
 import Sites from './pages/sites/Sites.tsx';
-import LPCreator from './pages/Creator/LPCreator';
+import LPCreator from './pages/creator/LPCreator';
 import PreCreator from './pages/preCreator/PreCreator.tsx';
 
 function Routers() {
