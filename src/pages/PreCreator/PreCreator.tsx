@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material';
 import Footer from '../../shared/components/footer/Footer';
 import Header from '../../shared/components/header/Header';
-import FormInput from '../../shared/components/FormInput/FormInput';
-import ButtonRedirect from '../../shared/components/ButtonRedirect/ButtonRedirect';
+import FormInput from '../../shared/components/formInput/FormInput';
+import ButtonRedirect from '../../shared/components/buttonRedirect/ButtonRedirect';
 import { useState } from 'react';
 
 export default function PreCreator() {

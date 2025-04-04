@@ -16,7 +16,7 @@ export default function ChangeBox({
       onClick={onClickFunction}
       sx={{
         padding: '10px',
-        width: '100px',
+        width: '120px',
         textAlign: 'center',
         borderRadius: '4px',
         backgroundColor: color ? 'primary.light' : 'background.default',

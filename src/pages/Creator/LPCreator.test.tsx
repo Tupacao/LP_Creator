@@ -1,5 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import LPCreator from './LPCreator';
+import LPCreator from '../Creator/LPCreator';
 import { MemoryRouter } from 'react-router-dom';
 
 describe('LPCreator', () => {
@@ -27,9 +27,9 @@ describe('LPCreator', () => {
   });
 
   test('Should remove one section when click', () => {
-    fireEvent.click(screen.getByText('Section1'));
+    fireEvent.click(screen.getByText('Section 1'));
     fireEvent.click(screen.getByText('Sim'));
-    expect(screen.queryByText('Section1')).not.toBeInTheDocument();
+    expect(screen.queryByText('Section 1')).not.toBeInTheDocument();
   });
 
   test('Should left-click not be allowed', () => {
@@ -55,17 +55,25 @@ describe('LPCreator', () => {
   });
 
   test('Should change reactComponent when clicked', async () => {
-    const buttonChange = screen.getByText('Type1');
+    const buttonChange = screen.getByText('Header 1');
     expect(buttonChange).toBeInTheDocument();
 
     await waitFor(() => {
-      expect(screen.getByText('HeaderZero')).toBeInTheDocument();
+      expect(
+        screen.getByText(
+          'Transforme as suas Ideias em realidade com nossos móveis personalizados',
+        ),
+      ).toBeInTheDocument();
     });
 
     fireEvent.click(buttonChange);
 
     await waitFor(() => {
-      expect(screen.getByText('HeaderOne')).toBeInTheDocument();
+      expect(
+        screen.getByText(
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, aliquam!',
+        ),
+      ).toBeInTheDocument();
     });
   });
 });
