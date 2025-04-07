@@ -19,7 +19,7 @@ interface AuthProviderProps {
 }
 
 interface UserData {
-    id: number;
+    id: string;
     nome: string;
     email: string;
     senha: string;
@@ -32,7 +32,7 @@ const AuthContext = createContext<AuthContextProps>({
     isAuthenticated: false,
     isLoading: false,
     error: '',
-    register: async () => { }, // Inicialize a função register
+    register: async () => { },
 });
 
 export const useAuth = () => useContext(AuthContext);
@@ -43,7 +43,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
     const navigate = useNavigate();
-    const queryClient = useQueryClient(); // Obtenha o QueryClient
+    const queryClient = useQueryClient();
 
     useEffect(() => {
         const checkAuthentication = async () => {
@@ -51,7 +51,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             try {
                 const userId = localStorage.getItem('userId');
                 if (userId) {
-                    const userData = await userService.getUser(Number(userId));
+                    const userData = await userService.getUser(userId);
                     setUser(userData);
                     setIsAuthenticated(true);
                 }
@@ -115,7 +115,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         isAuthenticated,
         isLoading,
         error,
-        register, // Adicione a função register
+        register,
     };
 
     return (

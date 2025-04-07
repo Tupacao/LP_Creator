@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_URL = 'http://localhost:3001';
 
 interface UserData {
-    id: number;
+    id: string;
     nome: string;
     email: string;
     senha: string;

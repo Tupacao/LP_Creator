@@ -3,13 +3,13 @@ import axios from 'axios';
 const API_URL = 'http://localhost:3001';
 
 interface UserData {
-    id: number;
+    id: string;
     nome: string;
     email: string;
     senha: string;
 }
 
-const getUser = async (userId: number): Promise<UserData> => {
+const getUser = async (userId: string): Promise<UserData> => {
     // eslint-disable-next-line no-useless-catch
     try {
         const response = await axios.get<UserData>(`${API_URL}/users/${userId}`);
@@ -19,7 +19,7 @@ const getUser = async (userId: number): Promise<UserData> => {
     }
 };
 
-const deleteAccount = async (userId: number): Promise<void> => {
+const deleteAccount = async (userId: string): Promise<void> => {
     // eslint-disable-next-line no-useless-catch
     try {
         await axios.delete(`${API_URL}/users/${userId}`);
