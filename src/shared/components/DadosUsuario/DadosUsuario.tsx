@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { useAuth } from '../../../app/AuthContext.tsx';
+import { useAuth } from '../../authentication/AuthContext.tsx';
 import userService from '../../services/UserService.ts';
 
 interface DadosUsuarioProps {

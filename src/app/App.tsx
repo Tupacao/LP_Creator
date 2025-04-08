@@ -5,7 +5,7 @@ import { Global } from '@emotion/react';
 import GlobalStyle from '../shared/styles/GlobalStyle';
 import { queryClient } from "../shared/constants/queryClient";
 import { QueryClientProvider } from "react-query";
-import {AuthProvider} from "./AuthContext.tsx";
+import {AuthProvider} from "../shared/authentication/AuthContext.tsx";
 import {BrowserRouter} from "react-router-dom";
 
 function App() {

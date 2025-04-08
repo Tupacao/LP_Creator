@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import authService from '../shared/services/AuthService.ts';
-import userService from '../shared/services/UserService.ts';
+import authService from '../services/AuthService.ts';
+import userService from '../services/UserService.ts';
 import { useQueryClient } from 'react-query';
 
 interface AuthContextProps {
@@ -11,7 +11,7 @@ interface AuthContextProps {
     isAuthenticated: boolean;
     isLoading: boolean;
     error: string;
-    register: (userData: { nome: string; email: string; senha: string }) => Promise<void>; // Adicione a função register
+    register: (userData: { nome: string; email: string; senha: string }) => Promise<void>;
 }
 
 interface AuthProviderProps {
@@ -92,7 +92,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setError('');
         try {
             await authService.register(userData);
-            queryClient.invalidateQueries('users'); // Invalida o cache de usuários
+            queryClient.invalidateQueries('users');
             navigate('/login');
         } catch (error: any) {
             setError(error.message || 'Erro ao registrar usuário.');

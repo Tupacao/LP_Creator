@@ -3,7 +3,7 @@ import { useState } from 'react';
 import FormInput from '../../shared/components/FormInput/FormInput';
 import ButtonRedirect from '../../shared/components/ButtonRedirect/ButtonRedirect';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../app/AuthContext'; // Importe o useAuth
+import { useAuth } from '../../shared/authentication/AuthContext.tsx';
 
 export default function Register() {
     const [nome, setNome] = useState('');
@@ -29,10 +29,10 @@ export default function Register() {
         }
 
         try {
-            await register({ nome, email, senha }); // Chame a função register do AuthContext
-            navigate('/login'); // Redireciona para a página de login após o registro
+            await register({ nome, email, senha });
+            navigate('/login');
         } catch (error: any) {
-            setError(error.message || 'Ocorreu um erro ao criar a conta.'); // Exiba a mensagem de erro do AuthContext
+            setError(error.message || 'Ocorreu um erro ao criar a conta.');
         }
     };
 

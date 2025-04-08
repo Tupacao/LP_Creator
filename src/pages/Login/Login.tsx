@@ -2,28 +2,17 @@ import { Box, Link, Typography, Alert } from '@mui/material';
 import { useState } from 'react';
 import FormInput from '../../shared/components/FormInput/FormInput';
 import ButtonRedirect from '../../shared/components/ButtonRedirect/ButtonRedirect';
-import { useAuth } from '../../app/AuthContext'; // Importe o useAuth
+import { useAuth } from '../../shared/authentication/AuthContext.tsx';
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
-    const { login, isLoading } = useAuth(); // Use a função login do AuthContext
+    const { login, isLoading, error } = useAuth();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setError('');
 
-        if (!email || !password) {
-            setError('Por favor, preencha todos os campos.');
-            return;
-        }
-
-        try {
-            await login({ email, senha: password }); // Chame a função login do AuthContext
-        } catch (error: any) {
-            setError(error.message || 'Falha ao fazer login.'); // Exiba a mensagem de erro do AuthContext
-        }
+        await login({ email, senha: password });
     };
 
     return (

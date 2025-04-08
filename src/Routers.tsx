@@ -5,7 +5,7 @@ import Register from './pages/Register/Register';
 import Sites from './pages/sites/Sites.tsx';
 import LPCreator from './pages/Creator/LPCreator';
 import PreCreator from './pages/PreCreator/PreCreator';
-import ProtectedRoute from './app/ProtectedRoute'; // Importe o ProtectedRoute
+import ProtectedRoute from './shared/authentication/ProtectedRoute.tsx';
 
 function Routers() {
   return (
