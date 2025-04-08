@@ -1,58 +1,34 @@
-import { Box, Button, Typography } from '@mui/material';
-import Footer from '../../shared/components/footer/Footer';
-import Header from '../../shared/components/header/Header';
+import { useState } from 'react';
+import { Box, Button } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAngleLeft,
   faAngleRight,
   faPlus,
 } from '@fortawesome/free-solid-svg-icons';
-import SectionBox from './components/SectionBox/SectionBox';
-import ChangeBox from './components/ChangeBox/ChangeBox';
-import { JSX, useState } from 'react';
-import ModalButton from './components/ModalButton/ModalButton';
+import Footer from '../../shared/components/footer/Footer';
+import Header from '../../shared/components/header/Header';
+import ChangeBox from '../creator/components/changeBox/ChangeBox';
+import SectionBox from '../creator/components/sectionBox/SectionBox';
+import ModalButton from '../creator/components/modalButton/ModalButton';
+import ElementLibrary from '../elementsLibrary/ElementLibrary';
 
-const number_0 = (
-  <>
-    <Typography variant='h2'>HeaderZero</Typography>
-    <Typography variant='body1'>
-      Aqui você pode editar o cabeçalho do seu site
-    </Typography>
-    <Button variant='contained' color='primary'>
-      Texto Botão
-    </Button>
-  </>
-);
-
-const number_1 = (
-  <>
-    <Button variant='contained' color='primary'>
-      Texto Botão
-    </Button>
-    <Typography variant='body1'>
-      Aqui você pode editar o cabeçalho do seu site
-    </Typography>
-    <Typography variant='h2'>HeaderOne</Typography>
-  </>
-);
+const elementFooter = Object.values(ElementLibrary.ElementFooter);
+const elementHeader = Object.values(ElementLibrary.ElementHeader);
+const elementSection = Object.values(ElementLibrary.ElementSection);
 
 export default function LPCreator() {
-  const [dataType] = useState([
-    { title: 'Type0', color: false },
-    { title: 'Type1', color: false },
-  ]);
-
   const [dataSection, setDataSection] = useState([
-    { title: 'Section1', color: false },
+    { title: 'Section 1', color: false },
   ]);
 
-  const [component, setComponent] = useState<JSX.Element>(number_0);
-  const [activateType, setActiveType] = useState<String>('Type0');
+  const [activateType, setActiveType] = useState<String>('Header 0');
   const [indexClick, setIndexClick] = useState<number>(-1);
+  const [elmentIndex, setElementIndex] = useState<number>(0);
 
-  const handleClickType = (title: String) => {
+  const handleClickType = (title: String, index: number) => {
     setActiveType(title);
-    setComponent(title == 'Type0' ? number_0 : number_1);
+    setElementIndex(index);
   };
 
   const handleLeftClick = () => {
@@ -182,7 +158,11 @@ export default function LPCreator() {
             boxShadow: 8,
           }}
         >
-          {component}
+          {indexClick == -1
+            ? elementHeader[elmentIndex]
+            : indexClick == dataSection.length
+              ? elementFooter[elmentIndex]
+              : elementSection[elmentIndex]}
         </Box>
         <Box
           data-testid='right-click'
@@ -210,14 +190,38 @@ export default function LPCreator() {
           py: '10px',
         }}
       >
-        {dataType.map((item) => (
-          <ChangeBox
-            key={item.title}
-            title={item.title}
-            color={activateType == item.title}
-            onClickFunction={() => handleClickType(item.title)}
-          />
-        ))}
+        {indexClick == -1
+          ? elementHeader.map((_item, index) => (
+              <ChangeBox
+                key={index}
+                title={`Header ${index}`}
+                color={activateType == `Header ${index}`}
+                onClickFunction={() =>
+                  handleClickType(`Header ${index}`, index)
+                }
+              />
+            ))
+          : indexClick == dataSection.length
+            ? elementFooter.map((_item, index) => (
+                <ChangeBox
+                  key={index}
+                  title={`Footer ${index}`}
+                  color={activateType == `Footer ${index}`}
+                  onClickFunction={() =>
+                    handleClickType(`Footer ${index}`, index)
+                  }
+                />
+              ))
+            : elementSection.map((_item, index) => (
+                <ChangeBox
+                  key={index}
+                  title={`Section ${index}`}
+                  color={activateType == `Section ${index}`}
+                  onClickFunction={() =>
+                    handleClickType(`Section ${index}`, index)
+                  }
+                />
+              ))}
       </Box>
       <Box
         sx={{

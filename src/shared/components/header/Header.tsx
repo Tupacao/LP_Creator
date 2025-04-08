@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../assets/lp_logo.png';
-import DadosUsuario from '../DadosUsuario/DadosUsuario';
+import DadosUsuario from '../dadosUsuario/DadosUsuario';
 import { useState } from 'react';
 
 const Header: React.FC = () => {

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Register from './Register';
+import Register from '../Register/Register';
 
 describe('Register', () => {
   test('Should render the Register page', () => {
