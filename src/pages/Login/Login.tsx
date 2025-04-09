@@ -88,7 +88,6 @@ function Login() {
                         value={email}
                         functionOnChange={(e) => setEmail(e.target.value)}
                         required
-                        id="login-email"
                     />
                     <FormInput
                         label='Senha'
@@ -96,7 +95,6 @@ function Login() {
                         value={password}
                         functionOnChange={(e) => setPassword(e.target.value)}
                         required
-                        id="login-password"
                     />
                     <ButtonRedirect
                         text={isLoading ? 'Carregando...' : 'Logar'}

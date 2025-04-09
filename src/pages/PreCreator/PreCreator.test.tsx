@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import PreCreator from './PreCreator';
 import { MemoryRouter } from 'react-router-dom';
 
-describe('PreCreatror', () => {
+describe('PreCreatro', () => {
   beforeEach(() => {
     render(
       <MemoryRouter>

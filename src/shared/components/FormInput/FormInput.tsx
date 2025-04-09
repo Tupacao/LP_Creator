@@ -8,7 +8,6 @@ interface FormInputProps {
     value?: string;
     functionOnChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     required?: boolean;
-    id: string;
 }
 
 export default function FormInput({
@@ -17,8 +16,7 @@ export default function FormInput({
                                       placeholder,
                                       value = '',
                                       functionOnChange,
-                                      required = false,
-                                    id
+                                      required = false
                                   }: FormInputProps) {
     return (
         <TextField
@@ -29,7 +27,6 @@ export default function FormInput({
             value={value}
             required={required}
             color='primary'
-            id={id}
             sx={{
                 '& .MuiInputBase-input': {
                     color: 'text.secondary',
@@ -40,11 +37,6 @@ export default function FormInput({
             }}
             onChange={functionOnChange}
             fullWidth
-            InputProps={{
-                inputProps: {
-                    'data-testid': `${id}-input`, // Adicione o data-testid ao input
-                },
-            }}
         />
     );
 }

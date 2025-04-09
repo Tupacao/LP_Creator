@@ -93,7 +93,6 @@ export default function Register() {
                         value={nome}
                         functionOnChange={(e) => setNome((e.target as HTMLInputElement).value)}
                         required
-                        id="register-nome"
                     />
                     <FormInput
                         label='Email'
@@ -102,7 +101,6 @@ export default function Register() {
                         value={email}
                         functionOnChange={(e) => setEmail((e.target as HTMLInputElement).value)}
                         required
-                        id="register-email"
                     />
                     <FormInput
                         label='Senha'
@@ -110,7 +108,6 @@ export default function Register() {
                         value={senha}
                         functionOnChange={(e) => setSenha((e.target as HTMLInputElement).value)}
                         required
-                        id="register-senha"
                     />
                     <FormInput
                         label='Confirme sua senha'
@@ -118,7 +115,6 @@ export default function Register() {
                         value={confirmSenha}
                         functionOnChange={(e) => setConfirmSenha((e.target as HTMLInputElement).value)}
                         required
-                        id="register-confirm-senha"
                     />
                     <ButtonRedirect
                         text={isLoading ? 'Criando conta...' : 'Criar conta'}
