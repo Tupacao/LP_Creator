@@ -18,6 +18,8 @@ const elementHeader = Object.values(ElementLibrary.ElementHeader);
 const elementSection = Object.values(ElementLibrary.ElementSection);
 
 export default function LPCreator() {
+
+
   const [dataSection, setDataSection] = useState([
     { title: 'Section 1', color: false },
   ]);
@@ -53,7 +55,7 @@ export default function LPCreator() {
       return;
     }
     const newSection = {
-      title: `Section${dataSection.length + 1}`,
+      title: `Section ${dataSection.length + 1}`,
       color: false,
     };
     setDataSection([...dataSection, newSection]);
@@ -62,7 +64,7 @@ export default function LPCreator() {
   const removeSection = (index: number) => {
     const newSection = dataSection.filter((_item, i) => i !== index);
     const newSection2 = newSection.map((item, i) => ({
-      title: `Section${i + 1}`,
+      title: `Section ${i + 1}`,
       color: item.color,
     }));
     setDataSection(newSection2);
