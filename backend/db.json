@@ -5,6 +5,12 @@
       "nome": "guilherme@email.com",
       "email": "guilherme@email.com",
       "senha": "guilherme@email.com"
+    },
+    {
+      "id": "967c",
+      "nome": "adm",
+      "email": "adm@gmail.com",
+      "senha": "123"
     }
   ],
   "sites": []

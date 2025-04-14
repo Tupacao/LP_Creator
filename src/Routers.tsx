@@ -1,11 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
-import Login from './pages/Login/Login';
-import Register from './pages/Register/Register';
+import Login from './pages/login/Login';
+import Register from './pages/register/Register';
 import Sites from './pages/sites/Sites.tsx';
-import LPCreator from './pages/Creator/LPCreator';
-import PreCreator from './pages/PreCreator/PreCreator';
+import LPCreator from './pages/creator/LPCreator';
+import PreCreator from './pages/preCreator/PreCreator';
 import ProtectedRoute from './shared/authentication/ProtectedRoute.tsx';
+import Teste from './pages/teste/Teste.tsx';
 
 function Routers() {
   return (
@@ -22,6 +23,7 @@ function Routers() {
         <Route path='/sites' element={<ProtectedRoute><Sites /></ProtectedRoute>} />
         <Route path='/user' element={<ProtectedRoute><h1>Dados do Usuário</h1></ProtectedRoute>} />
         <Route path='*' element={<h1>Página não encontrada</h1>} />
+        <Route path='/teste' element={<Teste/>} />
       </Routes>
 
   );
