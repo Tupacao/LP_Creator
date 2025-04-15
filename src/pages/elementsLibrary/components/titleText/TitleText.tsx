@@ -6,9 +6,10 @@ interface TitleTextProps {
   width?: string;
   size?: string;
   middle?: boolean
+  position?: string
 }
 
-export default function TitleText({ titleText, setTitle, middle, size = "1.5rem", width = "800px" }: TitleTextProps) {
+export default function TitleText({ titleText, setTitle, middle, size = "1.5rem", width = "800px", position = "start" }: TitleTextProps) {
 
   return (
     <TextField
@@ -28,7 +29,7 @@ export default function TitleText({ titleText, setTitle, middle, size = "1.5rem"
           disableUnderline: true,
           style: {
             width: width,
-            textAlignLast: middle ? 'center' : 'start',
+            textAlignLast: middle ? 'center' : (position as React.CSSProperties['textAlignLast']),
             margin: '0 auto',
             fontSize: size,
             fontWeight: 'bold',

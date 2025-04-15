@@ -5,6 +5,7 @@ interface DescriptionTextProps {
   setDescription: (value: string) => void;
   width?: string;
   middle?: boolean
+  position?: string
 }
 
 export default function DescriptionText({
@@ -12,12 +13,13 @@ export default function DescriptionText({
   setDescription,
   width = "800px",
   middle = false,
+  position = "start"
 }: DescriptionTextProps) {
   return (
     <TextField
           value={descriptionText}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder='Criamos móveis sob medida que refletem sua personalidade e atendem às suas necessidades. Cada peça é única, feita com materiais de alta qualidade e um cuidado excepcional em cada detalhe.'
+          placeholder='escreva sua descrição'
           variant='standard'
           multiline
           sx={{
@@ -32,7 +34,7 @@ export default function DescriptionText({
               style: {
                 width: width,
                 margin: '0 auto',
-                textAlignLast: middle ? 'center' : 'start',
+                textAlignLast: middle ? 'center' : (position as React.CSSProperties['textAlignLast']),
                 fontSize: '1rem',
                 fontWeight: 'normal',
                 color: 'inherit',

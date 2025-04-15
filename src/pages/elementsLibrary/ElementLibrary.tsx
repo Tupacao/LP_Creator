@@ -13,6 +13,8 @@ interface ElementContentProps {
   setAddressText: (value: string) => void;
   copiright: string;
   setCopiright: (value: string) => void;
+  titleBox: any[];
+  setTitleBox: (value: any[]) => void;
 }
 
 const ElementLibrary = (props : ElementContentProps) => ({

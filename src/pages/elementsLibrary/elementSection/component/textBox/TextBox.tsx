@@ -3,7 +3,16 @@ import ButtonText from '../../../components/buttonText/ButtonText';
 import DescriptionText from '../../../components/descriptionText/DescriptionText';
 import TitleText from '../../../components/titleText/TitleText';
 
-export default function TextBox() {
+interface TextBoxProps {
+  titleText: string;
+  setTitleText: (value: string) => void;
+  description: string;
+  setDescription: (value: string) => void;
+  buttonText: string;
+  setButtonText: (value: string) => void;
+}
+
+export default function TextBox({titleText, setTitleText, description, setDescription, buttonText, setButtonText}: TextBoxProps) {
   return (
     <Box
       sx={{
@@ -18,9 +27,9 @@ export default function TextBox() {
         borderRadius: 2,
       }}
     >
-      <TitleText titleText='Lorem, ipsum dolor.' />
-      <DescriptionText descriptionText='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,' />
-      <ButtonText hasIcon={false} />
+      <TitleText titleText={titleText} setTitle={setTitleText} middle={true} width='250px' />
+      <DescriptionText descriptionText={description} setDescription={setDescription} middle={true} width='250px' />
+      <ButtonText hasIcon={false} buttonText={buttonText} setButtonText={setButtonText} />
     </Box>
   );
 }

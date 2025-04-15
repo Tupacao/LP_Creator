@@ -18,7 +18,26 @@ export default function LPCreator() {
   const [description, setDescription] = useState('');
   const [buttonText, setButtonText] = useState('');
   const [addressText, setAddressText] = useState('');
-  const [copiright, setCopiright] = useState('Copyright 2025 - Todos os direitos reservados');
+  const [copiright, setCopiright] = useState(
+    'Copyright 2025 - Todos os direitos reservados',
+  );
+  const [titleBox, setTitleBox] = useState([
+    {
+      titleBox: '',
+      descriptionBox: '',
+      buttonBox: '',
+    },
+    {
+      titleBox: '',
+      descriptionBox: '',
+      buttonBox: '',
+    },
+    {
+      titleBox: '',
+      descriptionBox: '',
+      buttonBox: '',
+    },
+  ]);
 
   const elementContentProps = {
     titleText,
@@ -31,9 +50,11 @@ export default function LPCreator() {
     setAddressText,
     copiright,
     setCopiright,
+    titleBox,
+    setTitleBox,
   };
 
-  const elementLib = ElementLibrary(elementContentProps)
+  const elementLib = ElementLibrary(elementContentProps);
 
   const elementFooter = Object.values(elementLib.ElementFooter);
   const elementHeader = Object.values(elementLib.ElementHeader);
