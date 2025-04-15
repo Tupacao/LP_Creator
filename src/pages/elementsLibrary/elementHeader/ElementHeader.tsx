@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import TitleText from '../components/titleText/TitleText';
 import DescriptionText from '../components/descriptionText/DescriptionText';
 import ButtonText from '../components/buttonText/ButtonText';
-import React, { useState } from 'react';
+import React from 'react';
 
 const style = {
   display: 'flex',
@@ -13,7 +13,17 @@ const style = {
   gap: 1,
 };
 
-export default function ElementHeader() {
+interface ElementHeaderProps {
+  titleText: string;
+  setTitleText: (value: string) => void;
+  description: string;
+  setDescription: (value: string) => void;
+  buttonText: string;
+  setButtonText: (value: string) => void;
+}
+
+export default function ElementHeader(props : ElementHeaderProps) {
+  const { titleText, setTitleText, description, setDescription, buttonText, setButtonText } = props;
 
   const header1 = (
     <Box
@@ -23,11 +33,9 @@ export default function ElementHeader() {
         alignItems: 'start',
       }}
     >
-      <TitleText titleText={"Algo"}  />
-      <DescriptionText
-        descriptionText={"Ag"}
-      />
-      <ButtonText hasIcon={true} />
+      <TitleText titleText={titleText} setTitle={setTitleText} />
+      <DescriptionText descriptionText={description} setDescription={setDescription} width='600px' />
+      <ButtonText hasIcon={true} buttonText={buttonText} setButtonText={setButtonText} />
     </Box>
   );
 
@@ -41,11 +49,9 @@ export default function ElementHeader() {
         textAlign: 'center',
       }}
     >
-      <TitleText titleText={"Algo"}  />
-      <DescriptionText
-        descriptionText={"Ag"}
-      />
-      <ButtonText hasIcon={false} />
+      <TitleText titleText={titleText} setTitle={setTitleText} middle={true} />
+      <DescriptionText descriptionText={description} setDescription={setDescription} middle={true} />
+      <ButtonText hasIcon={true} buttonText={buttonText} setButtonText={setButtonText} />
     </Box>
   );
 

@@ -12,7 +12,15 @@ const style = {
   gap: 2,
 };
 
-export default function ElementFooter() {
+interface ElementFooterProps {
+  titleText: string;
+  setTitleText: (value: string) => void;
+  description: string;
+  setDescription: (value: string) => void;
+}
+
+export default function ElementFooter(props : ElementFooterProps) {
+  const { titleText, setTitleText, description, setDescription } = props;
   const footer1 = (
     <Box
       data-testid='footer1'
@@ -28,7 +36,7 @@ export default function ElementFooter() {
           ...style,
         }}
       >
-        <TitleText titleText='Entre em Contato' />
+        <TitleText titleText={titleText} />
         <Box width={'60%'}>
           <DescriptionText
             descriptionText='Atendimento Presencial'

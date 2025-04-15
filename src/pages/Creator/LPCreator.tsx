@@ -13,12 +13,25 @@ import SectionBox from '../creator/components/sectionBox/SectionBox';
 import ModalButton from '../creator/components/modalButton/ModalButton';
 import ElementLibrary from '../elementsLibrary/ElementLibrary';
 
-const elementFooter = Object.values(ElementLibrary.ElementFooter);
-const elementHeader = Object.values(ElementLibrary.ElementHeader);
-const elementSection = Object.values(ElementLibrary.ElementSection);
-
 export default function LPCreator() {
+  const [titleText, setTitleText] = useState('');
+  const [description, setDescription] = useState('');
+  const [buttonText, setButtonText] = useState('');
 
+  const elementContentProps = {
+    titleText,
+    setTitleText,
+    description,
+    setDescription,
+    buttonText,
+    setButtonText
+  };
+
+  const elementLib = ElementLibrary(elementContentProps)
+
+  const elementFooter = Object.values(elementLib.ElementFooter);
+  const elementHeader = Object.values(elementLib.ElementHeader);
+  const elementSection = Object.values(elementLib.ElementSection);
 
   const [dataSection, setDataSection] = useState([
     { title: 'Section 1', color: false },
@@ -26,7 +39,7 @@ export default function LPCreator() {
 
   const [activateType, setActiveType] = useState<String>('Header 0');
   const [indexClick, setIndexClick] = useState<number>(-1);
-  const [elmentIndex, setElementIndex] = useState<number>(0);
+  const [elementIndex, setElementIndex] = useState<number>(0);
 
   const handleClickType = (title: String, index: number) => {
     setActiveType(title);
@@ -161,10 +174,10 @@ export default function LPCreator() {
           }}
         >
           {indexClick == -1
-            ? elementHeader[elmentIndex]
+            ? elementHeader[elementIndex]
             : indexClick == dataSection.length
-              ? elementFooter[elmentIndex]
-              : elementSection[elmentIndex]}
+              ? elementFooter[elementIndex]
+              : elementSection[elementIndex]}
         </Box>
         <Box
           data-testid='right-click'

@@ -20,7 +20,16 @@ const style_innerBox = {
   gap: 1,
 };
 
-export default function ElementSection() {
+interface ElementSectionProps {
+  titleText: string;
+  setTitleText: (value: string) => void;
+  description: string;
+  setDescription: (value: string) => void;
+}
+
+export default function ElementSection(props: ElementSectionProps) {
+  const { titleText, setTitleText, description, setDescription } = props;
+
   const section1 = (
     <Box
       data-testid='section1'
@@ -39,7 +48,7 @@ export default function ElementSection() {
             descriptionText='Lorem ipsum dolor sit.'
             isStrong={true}
           />
-          <TitleText titleText='Lorem ipsum dolor sit.' />
+          <TitleText titleText={titleText} />
         </Box>
         <DescriptionText
           descriptionText='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
