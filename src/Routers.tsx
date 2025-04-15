@@ -6,7 +6,6 @@ import Sites from './pages/sites/Sites.tsx';
 import LPCreator from './pages/creator/LPCreator';
 import PreCreator from './pages/preCreator/PreCreator';
 import ProtectedRoute from './shared/authentication/ProtectedRoute.tsx';
-import Teste from './pages/teste/Teste.tsx';
 
 function Routers() {
   return (
@@ -64,7 +63,6 @@ function Routers() {
         }
       />
       <Route path='*' element={<h1>Página não encontrada</h1>} />
-      <Route path='/teste' element={<LPCreator />} />
     </Routes>
   );
 }
