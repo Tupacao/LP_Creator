@@ -1,24 +1,26 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import DescriptionText from './DescriptionText';
 
 describe('DescriptionText', () => {
-  test('Should render DescriptionText with normal text', () => {
-    render(<DescriptionText descriptionText='teste' isStrong={false} />);
+  test('Should render DescriptionText', () => {
+    render(<DescriptionText descriptionText='teste' setDescription={() => {}} />);
 
-    const descriptionText = screen.getByTestId('description-text');
-
-    expect(descriptionText).toBeInTheDocument();
-    expect(descriptionText).toHaveTextContent('teste');
-    expect(descriptionText).toHaveStyle('font-weight: normal');
-  });
-
-  test('Should render DescriptionText with bold text', () => {
-    render(<DescriptionText descriptionText='teste' isStrong={true} />);
-
-    const descriptionText = screen.getByTestId('description-text');
+    const descriptionText = screen.getByPlaceholderText('Escreva sua descrição');
 
     expect(descriptionText).toBeInTheDocument();
     expect(descriptionText).toHaveTextContent('teste');
-    expect(descriptionText).toHaveStyle('font-weight: 700');
   });
+
+  test('Should call setDescription when changed', () => {
+    const seDescription = jest.fn();
+    render(<DescriptionText descriptionText='teste' setDescription={seDescription} />);
+
+    const descriptionText = screen.getByPlaceholderText('Escreva sua descrição');
+    expect(descriptionText).toBeInTheDocument();
+
+    fireEvent.change(descriptionText, { target: { value: 'Nova descrição' } });
+  
+    expect(seDescription).toHaveBeenCalledWith('Nova descrição');
+  });
+
 });

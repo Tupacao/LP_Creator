@@ -1,21 +1,29 @@
-import { TextField} from '@mui/material';
+import { TextField } from '@mui/material';
 
 interface TitleTextProps {
   titleText: string;
   setTitle: (value: string) => void;
   width?: string;
   size?: string;
-  middle?: boolean
-  position?: string
+  middle?: boolean;
+  position?: string;
+  placeholder?: string;
 }
 
-export default function TitleText({ titleText, setTitle, middle, size = "1.5rem", width = "800px", position = "start" }: TitleTextProps) {
-
+export default function TitleText({
+  titleText,
+  setTitle,
+  middle,
+  size = '1.5rem',
+  width = '800px',
+  position = 'start',
+  placeholder = 'Entre em Contato',
+}: TitleTextProps) {
   return (
     <TextField
       value={titleText}
       onChange={(e) => setTitle(e.target.value)}
-      placeholder='Entre em Contato'
+      placeholder={placeholder}
       variant='standard'
       multiline
       sx={{
@@ -29,7 +37,9 @@ export default function TitleText({ titleText, setTitle, middle, size = "1.5rem"
           disableUnderline: true,
           style: {
             width: width,
-            textAlignLast: middle ? 'center' : (position as React.CSSProperties['textAlignLast']),
+            textAlignLast: middle
+              ? 'center'
+              : (position as React.CSSProperties['textAlignLast']),
             margin: '0 auto',
             fontSize: size,
             fontWeight: 'bold',

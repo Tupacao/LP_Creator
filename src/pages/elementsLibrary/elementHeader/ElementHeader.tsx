@@ -33,7 +33,7 @@ export default function ElementHeader(props : ElementHeaderProps) {
         alignItems: 'start',
       }}
     >
-      <TitleText titleText={titleText} setTitle={setTitleText} />
+      <TitleText titleText={titleText} setTitle={setTitleText} placeholder='Type 1' />
       <DescriptionText descriptionText={description} setDescription={setDescription} width='600px' />
       <ButtonText hasIcon={true} buttonText={buttonText} setButtonText={setButtonText} />
     </Box>
@@ -49,7 +49,7 @@ export default function ElementHeader(props : ElementHeaderProps) {
         textAlign: 'center',
       }}
     >
-      <TitleText titleText={titleText} setTitle={setTitleText} middle={true} />
+      <TitleText titleText={titleText} setTitle={setTitleText} middle={true} placeholder='Type 2'/>
       <DescriptionText descriptionText={description} setDescription={setDescription} middle={true} />
       <ButtonText hasIcon={true} buttonText={buttonText} setButtonText={setButtonText} />
     </Box>

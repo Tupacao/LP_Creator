@@ -1,11 +1,12 @@
 import { TextField } from '@mui/material';
 
 interface DescriptionTextProps {
-  descriptionText: string;
-  setDescription: (value: string) => void;
-  width?: string;
+  descriptionText: string
+  setDescription: (value: string) => void
+  width?: string
   middle?: boolean
   position?: string
+  placeholder?: string
 }
 
 export default function DescriptionText({
@@ -13,13 +14,14 @@ export default function DescriptionText({
   setDescription,
   width = "800px",
   middle = false,
-  position = "start"
+  position = "start",
+  placeholder = "Escreva sua descrição",
 }: DescriptionTextProps) {
   return (
     <TextField
           value={descriptionText}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder='escreva sua descrição'
+          placeholder={placeholder}
           variant='standard'
           multiline
           sx={{
