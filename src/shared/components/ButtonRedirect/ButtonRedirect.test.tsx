@@ -12,9 +12,9 @@ describe('ButtonRedirect Component', () => {
 
   test('Should display the correct text and link', () => {
     render(
-        <MemoryRouter>
-          <ButtonRedirect text='teste' href='/teste' />
-        </MemoryRouter>
+      <MemoryRouter>
+        <ButtonRedirect text='teste' href='/teste' />
+      </MemoryRouter>,
     );
     const button = screen.getByText('teste');
     expect(button).toHaveTextContent('teste');
@@ -24,10 +24,10 @@ describe('ButtonRedirect Component', () => {
   test('Should call onClick function when clicked', () => {
     const handleClick = jest.fn();
     render(
-        <ButtonRedirect
-            text='teste'
-            onClick={handleClick} // Use onClick
-        />
+      <ButtonRedirect
+        text='teste'
+        onClick={handleClick} // Use onClick
+      />,
     );
     const button = screen.getByText('teste');
     fireEvent.click(button);

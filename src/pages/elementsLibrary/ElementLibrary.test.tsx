@@ -3,7 +3,6 @@ import ElementLibrary from './ElementLibrary';
 
 describe('ElementLibrary', () => {
   test('Should render ElementLibrary', () => {
-
     const elementMockContentProps = {
       titleText: '',
       setTitleText: jest.fn(),
@@ -16,10 +15,12 @@ describe('ElementLibrary', () => {
       copiright: '',
       setCopiright: jest.fn(),
       titleBox: [{}],
-      setTitleBox: jest.fn()
-    }
+      setTitleBox: jest.fn(),
+    };
 
-    const { ElementSection, ElementHeader, ElementFooter } = ElementLibrary(elementMockContentProps);
+    const { ElementSection, ElementHeader, ElementFooter } = ElementLibrary(
+      elementMockContentProps,
+    );
 
     const { container: sectionContainer } = render(ElementSection);
     const { container: headerContainer } = render(ElementHeader);

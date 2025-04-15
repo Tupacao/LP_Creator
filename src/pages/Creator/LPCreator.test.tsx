@@ -59,21 +59,13 @@ describe('LPCreator', () => {
     expect(buttonChange).toBeInTheDocument();
 
     await waitFor(() => {
-      expect(
-        screen.getByPlaceholderText(
-          'Type 1',
-        ),
-      ).toBeInTheDocument();
+      expect(screen.getByPlaceholderText('Type 1')).toBeInTheDocument();
     });
 
     fireEvent.click(buttonChange);
 
     await waitFor(() => {
-      expect(
-        screen.getByPlaceholderText(
-          'Type 2',
-        ),
-      ).toBeInTheDocument();
+      expect(screen.getByPlaceholderText('Type 2')).toBeInTheDocument();
     });
   });
 });

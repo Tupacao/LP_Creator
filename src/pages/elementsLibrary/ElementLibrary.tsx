@@ -17,10 +17,10 @@ interface ElementContentProps {
   setTitleBox: (value: any[]) => void;
 }
 
-const ElementLibrary = (props : ElementContentProps) => ({
+const ElementLibrary = (props: ElementContentProps) => ({
   ElementHeader: ElementHeader(props),
   ElementFooter: ElementFooter(props),
-  ElementSection: ElementSection(props)
+  ElementSection: ElementSection(props),
 });
 
 export default ElementLibrary;

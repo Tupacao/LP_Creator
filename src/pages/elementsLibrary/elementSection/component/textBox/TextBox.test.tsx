@@ -36,15 +36,15 @@ describe('TextBox', () => {
         setButtonText={setButtonText}
       />,
     );
-    
-    const title = screen.getByText('TesteTitle')
-    expect(title).toBeInTheDocument()
 
-    const description = screen.getByText('TesteDescription')
-    expect(description).toBeInTheDocument()
+    const title = screen.getByText('TesteTitle');
+    expect(title).toBeInTheDocument();
 
-    const button = screen.getByText('TesteButton')
-    expect(button).toBeInTheDocument()
+    const description = screen.getByText('TesteDescription');
+    expect(description).toBeInTheDocument();
+
+    const button = screen.getByText('TesteButton');
+    expect(button).toBeInTheDocument();
 
     fireEvent.change(title, { target: { value: 'Novo Title' } });
     fireEvent.change(description, { target: { value: 'Nova description' } });
@@ -53,7 +53,5 @@ describe('TextBox', () => {
     expect(setTitleText).toHaveBeenCalledWith('Novo Title');
     expect(setDescription).toHaveBeenCalledWith('Nova description');
     expect(setButtonText).toHaveBeenCalledWith('Novo Button');
-
   });
-
 });

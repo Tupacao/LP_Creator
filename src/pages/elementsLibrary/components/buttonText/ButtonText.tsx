@@ -8,7 +8,11 @@ interface ButtonTextProps {
   setButtonText: (value: string) => void;
 }
 
-export default function ButtonText({ buttonText, setButtonText, hasIcon }: ButtonTextProps) {
+export default function ButtonText({
+  buttonText,
+  setButtonText,
+  hasIcon,
+}: ButtonTextProps) {
   return (
     <Button
       endIcon={
@@ -26,29 +30,29 @@ export default function ButtonText({ buttonText, setButtonText, hasIcon }: Butto
       }}
     >
       <TextField
-            value={buttonText}
-            onChange={(e) => setButtonText(e.target.value)}
-            placeholder='ENTRE EM CONTATO'
-            variant='standard'
-            multiline
-            sx={{
-              backgroundColor: 'transparent',
-              whiteSpace: 'pre-wrap',
-              wordWrap: 'break-word',
-              overflowWrap: 'break-word',
-            }}
-            slotProps={{
-              input: {
-                disableUnderline: true,
-                style: {
-                  textAlignLast:'center',
-                  fontSize: '0.8rem',
-                  fontWeight: 'bold',
-                  color: 'inherit',
-                },
-              },
-            }}
-          />
+        value={buttonText}
+        onChange={(e) => setButtonText(e.target.value)}
+        placeholder='ENTRE EM CONTATO'
+        variant='standard'
+        multiline
+        sx={{
+          backgroundColor: 'transparent',
+          whiteSpace: 'pre-wrap',
+          wordWrap: 'break-word',
+          overflowWrap: 'break-word',
+        }}
+        slotProps={{
+          input: {
+            disableUnderline: true,
+            style: {
+              textAlignLast: 'center',
+              fontSize: '0.8rem',
+              fontWeight: 'bold',
+              color: 'inherit',
+            },
+          },
+        }}
+      />
     </Button>
   );
 }

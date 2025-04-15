@@ -12,7 +12,14 @@ interface TextBoxProps {
   setButtonText: (value: string) => void;
 }
 
-export default function TextBox({titleText, setTitleText, description, setDescription, buttonText, setButtonText}: TextBoxProps) {
+export default function TextBox({
+  titleText,
+  setTitleText,
+  description,
+  setDescription,
+  buttonText,
+  setButtonText,
+}: TextBoxProps) {
   return (
     <Box
       sx={{
@@ -27,9 +34,23 @@ export default function TextBox({titleText, setTitleText, description, setDescri
         borderRadius: 2,
       }}
     >
-      <TitleText titleText={titleText} setTitle={setTitleText} middle={true} width='250px' />
-      <DescriptionText descriptionText={description} setDescription={setDescription} middle={true} width='250px' />
-      <ButtonText hasIcon={false} buttonText={buttonText} setButtonText={setButtonText} />
+      <TitleText
+        titleText={titleText}
+        setTitle={setTitleText}
+        middle={true}
+        width='250px'
+      />
+      <DescriptionText
+        descriptionText={description}
+        setDescription={setDescription}
+        middle={true}
+        width='250px'
+      />
+      <ButtonText
+        hasIcon={false}
+        buttonText={buttonText}
+        setButtonText={setButtonText}
+      />
     </Box>
   );
 }

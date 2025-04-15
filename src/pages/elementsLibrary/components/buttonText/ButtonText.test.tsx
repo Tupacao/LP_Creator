@@ -3,7 +3,13 @@ import ButtonText from './ButtonText';
 
 describe('ButtonText', () => {
   test('ButtonText renders correctly with icon', () => {
-    render(<ButtonText hasIcon={true} buttonText="ENTRE EM CONTATO" setButtonText={() => {}} />);
+    render(
+      <ButtonText
+        hasIcon={true}
+        buttonText='ENTRE EM CONTATO'
+        setButtonText={() => {}}
+      />,
+    );
 
     const button = screen.getByRole('button');
     expect(button).toBeInTheDocument();
@@ -13,7 +19,13 @@ describe('ButtonText', () => {
   });
 
   test('ButtonText renders correctly without icon', () => {
-    render(<ButtonText hasIcon={false} buttonText="ENTRE EM CONTATO" setButtonText={() => {}} />);
+    render(
+      <ButtonText
+        hasIcon={false}
+        buttonText='ENTRE EM CONTATO'
+        setButtonText={() => {}}
+      />,
+    );
 
     const button = screen.getByRole('button');
     expect(button).toBeInTheDocument();
@@ -24,7 +36,13 @@ describe('ButtonText', () => {
 
   test('ButtonText calls setButtonText when changed', () => {
     const setButtonTextMock = jest.fn();
-    render(<ButtonText hasIcon={true} buttonText="ENTRE EM CONTATO" setButtonText={setButtonTextMock} />);
+    render(
+      <ButtonText
+        hasIcon={true}
+        buttonText='ENTRE EM CONTATO'
+        setButtonText={setButtonTextMock}
+      />,
+    );
 
     const textField = screen.getByPlaceholderText('ENTRE EM CONTATO');
     expect(textField).toBeInTheDocument();
@@ -33,5 +51,4 @@ describe('ButtonText', () => {
 
     expect(setButtonTextMock).toHaveBeenCalledWith('Novo Texto');
   });
-
 });
