@@ -3,7 +3,14 @@ import ElementFooter from './ElementFooter';
 
 describe('ElementFooter', () => {
   test('should render correctly', () => {
-    render(<ElementFooter />);
+    const elementMockProp = {
+      addressText: '',
+      setAddressText: jest.fn(),
+      copiright: '',
+      setCopiright: jest.fn(),
+    };
+
+    render(ElementFooter(elementMockProp));
 
     const footer = screen.getAllByTestId(/footer/);
     expect(footer).toHaveLength(2);
