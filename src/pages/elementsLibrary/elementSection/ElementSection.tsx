@@ -102,6 +102,7 @@ export default function ElementSection(props: ElementSectionProps) {
       data-testid='section2'
       sx={{
         ...style_outBox,
+        width: '100%',
       }}
     >
       <ImageBox width={300} height={200} />
