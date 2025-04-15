@@ -17,6 +17,8 @@ export default function LPCreator() {
   const [titleText, setTitleText] = useState('');
   const [description, setDescription] = useState('');
   const [buttonText, setButtonText] = useState('');
+  const [addressText, setAddressText] = useState('');
+  const [copiright, setCopiright] = useState('Copyright 2025 - Todos os direitos reservados');
 
   const elementContentProps = {
     titleText,
@@ -24,7 +26,11 @@ export default function LPCreator() {
     description,
     setDescription,
     buttonText,
-    setButtonText
+    setButtonText,
+    addressText,
+    setAddressText,
+    copiright,
+    setCopiright,
   };
 
   const elementLib = ElementLibrary(elementContentProps)

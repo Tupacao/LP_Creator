@@ -9,6 +9,10 @@ interface ElementContentProps {
   setDescription: (value: string) => void;
   buttonText: string;
   setButtonText: (value: string) => void;
+  addressText: string;
+  setAddressText: (value: string) => void;
+  copiright: string;
+  setCopiright: (value: string) => void;
 }
 
 const ElementLibrary = (props : ElementContentProps) => ({

@@ -4,10 +4,11 @@ interface TitleTextProps {
   titleText: string;
   setTitle: (value: string) => void;
   width?: string;
+  size?: string;
   middle?: boolean
 }
 
-export default function TitleText({ titleText, setTitle, middle }: TitleTextProps) {
+export default function TitleText({ titleText, setTitle, middle, size = "1.5rem", width = "800px" }: TitleTextProps) {
 
   return (
     <TextField
@@ -26,10 +27,10 @@ export default function TitleText({ titleText, setTitle, middle }: TitleTextProp
         input: {
           disableUnderline: true,
           style: {
-            width: '800px',
+            width: width,
             textAlignLast: middle ? 'center' : 'start',
             margin: '0 auto',
-            fontSize: '1.5rem',
+            fontSize: size,
             fontWeight: 'bold',
             color: 'inherit',
           },
