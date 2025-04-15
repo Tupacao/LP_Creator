@@ -11,8 +11,8 @@ interface ElementContentProps {
   setButtonText: (value: string) => void;
   addressText: string;
   setAddressText: (value: string) => void;
-  copiright: string;
-  setCopiright: (value: string) => void;
+  copyright: string;
+  setCopyright: (value: string) => void;
   titleBox: any[];
   setTitleBox: (value: any[]) => void;
 }

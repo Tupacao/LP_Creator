@@ -18,7 +18,7 @@ export default function LPCreator() {
   const [description, setDescription] = useState('');
   const [buttonText, setButtonText] = useState('');
   const [addressText, setAddressText] = useState('');
-  const [copiright, setCopiright] = useState(
+  const [copyright, setCopyright] = useState(
     'Copyright 2025 - Todos os direitos reservados',
   );
   const [titleBox, setTitleBox] = useState([
@@ -48,8 +48,8 @@ export default function LPCreator() {
     setButtonText,
     addressText,
     setAddressText,
-    copiright,
-    setCopiright,
+    copyright,
+    setCopyright,
     titleBox,
     setTitleBox,
   };

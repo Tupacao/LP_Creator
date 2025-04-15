@@ -21,12 +21,12 @@ const typographyStyle = {
 interface ElementFooterProps {
   addressText: string;
   setAddressText: (value: string) => void;
-  copiright: string;
-  setCopiright: (value: string) => void;
+  copyright: string;
+  setCopyright: (value: string) => void;
 }
 
 export default function ElementFooter(props: ElementFooterProps) {
-  const { addressText, setAddressText, copiright, setCopiright } = props;
+  const { addressText, setAddressText, copyright, setCopyright } = props;
 
   const footer1 = (
     <Box
@@ -65,7 +65,7 @@ export default function ElementFooter(props: ElementFooterProps) {
             <IconBox />
           </Box>
         </Box>
-        <TitleText titleText={copiright} setTitle={setCopiright} size='1rem' />
+        <TitleText titleText={copyright} setTitle={setCopyright} size='1rem' />
       </Box>
       <MapBox width={300} height={200} />
     </Box>
@@ -110,7 +110,7 @@ export default function ElementFooter(props: ElementFooterProps) {
         </Box>
         <MapBox width={200} height={150} />
       </Box>
-      <TitleText titleText={copiright} setTitle={setCopiright} size='1rem' />
+      <TitleText titleText={copyright} setTitle={setCopyright} size='1rem' />
     </Box>
   );
 
