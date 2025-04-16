@@ -22,7 +22,7 @@ function Routers() {
         </Route>
         <Route path='/sites' element={<ProtectedRoute><Sites /></ProtectedRoute>} />
         <Route path='/user' element={<ProtectedRoute><h1>Dados do Usuário</h1></ProtectedRoute>} />
-        <Route path='/landingpage' element={<LandingPage />} />
+          <Route path='/landingpage/:siteId' element={<LandingPage />} />
         <Route path='*' element={<h1>Página não encontrada</h1>} />
       </Routes>
 

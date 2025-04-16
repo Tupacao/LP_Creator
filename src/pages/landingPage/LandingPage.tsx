@@ -2,15 +2,39 @@ import { Box } from '@mui/material';
 import { Header1, Header2 } from './components/Header';
 import { Footer1, Footer2} from './components/Footer';
 import { Section1, Section2, Section3, Section4 } from './components/Section';
-import { mockSiteData } from './siteData';
-import { SectionData } from './types';
+import { SectionData, SiteData } from './types';
+import { useEffect, useState } from 'react';
+import LandingPageService from '../../shared/services/LandingPageService';
+import { useParams } from 'react-router-dom';
 
 
 const LandingPage = () => {
+    const [siteData, setSiteData] = useState<SiteData | null>(null);
+    const { siteId } = useParams();
+
+    useEffect(() => {
+        const fetchSiteData = async () => {
+            if (siteId) {
+                try {
+                    const data = await LandingPageService.getSiteData(siteId);
+                    setSiteData(data);
+                } catch (error) {
+                    console.error('Error fetching site data:', error);
+                }
+            }
+        };
+
+        fetchSiteData();
+    }, [siteId]);
+
+    if (!siteData) {
+        return null;
+    }
+
     const renderHeader = () => {
-        return mockSiteData.header.type === "1"
-            ? <Header1 data={mockSiteData.header} />
-            : <Header2 data={mockSiteData.header} />;
+        return siteData.header.type === "1"
+            ? <Header1 data={siteData.header} />
+            : <Header2 data={siteData.header} />;
     };
 
     const renderSection = (section: SectionData) => {
@@ -23,16 +47,16 @@ const LandingPage = () => {
     };
 
     const renderFooter = () => {
-        return mockSiteData.footer.type === "1"
-            ? <Footer1 data={mockSiteData.footer} />
-            : <Footer2 data={mockSiteData.footer} />;
+        return siteData.footer.type === "1"
+            ? <Footer1 data={siteData.footer} />
+            : <Footer2 data={siteData.footer} />;
     }
 
     return (
-        <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+        <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }} >
             {renderHeader()}
             <Box sx={{ flex: 1 }}>
-                {mockSiteData.sections
+                {siteData.sections
                     .sort((a, b) => a.orderIndex - b.orderIndex)
                     .map((section, index) => (
                         <Box key={index}>

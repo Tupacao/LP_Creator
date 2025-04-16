@@ -11,7 +11,8 @@ import {
   Paper,
 } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faTrash, faEye } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 interface ItemSiteProps {
   site: {
@@ -24,8 +25,13 @@ interface ItemSiteProps {
 const ItemSite: React.FC<ItemSiteProps> = ({ site }) => {
   const formattedDate = new Date(site.createdAt).toLocaleDateString();
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const handleViewSite = () => {
+    navigate(`/landingpage/${site.id}`);
+  };
 
   return (
     <Box>
@@ -42,6 +48,9 @@ const ItemSite: React.FC<ItemSiteProps> = ({ site }) => {
           disablePadding
           secondaryAction={
             <Box sx={{ display: 'flex', gap: 1 }}>
+              <IconButton edge='end' aria-label='view' onClick={handleViewSite}>
+                <FontAwesomeIcon icon={faEye} color='primary.main' />
+              </IconButton>
               <IconButton edge='end' aria-label='edit'>
                 <FontAwesomeIcon icon={faPen} color='secondary.light' />
               </IconButton>

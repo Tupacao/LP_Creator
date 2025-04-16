@@ -7,5 +7,146 @@
       "senha": "guilherme@email.com"
     }
   ],
-  "sites": []
+  "sites": [
+    {
+      "id": "1",
+      "userId": "316c",
+      "siteName": "Meu Site Mock 1",
+      "createdAt": "2025-04-14T12:00:00Z",
+      "header": {
+        "type": "1",
+        "title": "Bem-vindo!",
+        "subtitle": "A melhor landing page",
+        "buttonText": "Saiba Mais"
+      },
+      "sections": [
+        {
+          "type": "1",
+          "orderIndex": 1,
+          "title": "Nossa Missão",
+          "description": "Transformar ideias em realidade digital",
+          "imageUrl": "/assets/mission.jpg"
+        },
+        {
+          "type": "2",
+          "orderIndex": 2,
+          "features": [
+            {
+              "title": "Design Responsivo",
+              "description": "Seu site perfeito em qualquer dispositivo"
+            },
+            {
+              "title": "Performance",
+              "description": "Carregamento rápido e eficiente"
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "type": "1",
+        "title": "Contato",
+        "address": "Rua Exemplo, 123",
+        "socialMedia": true,
+        "copyright": "© 2025 Meu Site"
+      }
+    },
+    {
+      "id": "2",
+      "userId": "316c",
+      "siteName": "Site Corporativo",
+      "createdAt": "2025-04-15T14:30:00Z",
+      "header": {
+        "type": "2",
+        "title": "Soluções Empresariais",
+        "subtitle": "Inovação para seu negócio",
+        "buttonText": "Começar"
+      },
+      "sections": [
+        {
+          "type": "1",
+          "orderIndex": 1,
+          "title": "Soluções Empresariais",
+          "description": "Oferecemos as melhores soluções para sua empresa crescer",
+          "imageUrl": "/assets/business.jpg"
+        },
+        {
+          "type": "3",
+          "orderIndex": 2,
+          "testimonials": [
+            {
+              "author": "João Silva - CEO",
+              "text": "Melhor decisão que tomamos para nossa empresa"
+            },
+            {
+              "author": "Maria Santos - Diretora",
+              "text": "Resultados extraordinários em tempo recorde"
+            }
+          ]
+        },
+        {
+          "type": "4",
+          "orderIndex": 3,
+          "email": "contato@empresa.com",
+          "phone": "(11) 98765-4321",
+          "address": "Av. Empresarial, 456"
+        }
+      ],
+      "footer": {
+        "type": "2",
+        "title": "Fale Conosco",
+        "address": "Av. Empresarial, 456",
+        "socialMedia": true,
+        "copyright": "© 2025 Corporativo"
+      }
+    },
+    {
+      "id": "3",
+      "userId": "316c",
+      "siteName": "Portfolio Digital",
+      "createdAt": "2025-04-16T09:15:00Z",
+      "header": {
+        "type": "1",
+        "title": "Meus Trabalhos",
+        "subtitle": "Projetos e Experiências",
+        "buttonText": "Ver Projetos"
+      },
+      "sections": [
+        {
+          "type": "2",
+          "orderIndex": 1,
+          "features": [
+            {
+              "title": "Design Web",
+              "description": "Criação de interfaces modernas"
+            },
+            {
+              "title": "Mobile Apps",
+              "description": "Desenvolvimento de aplicativos"
+            },
+            {
+              "title": "Marketing Digital",
+              "description": "Estratégias de crescimento"
+            }
+          ]
+        },
+        {
+          "type": "3",
+          "orderIndex": 2,
+          "testimonials": [
+            {
+              "author": "Pedro Alves - Cliente",
+              "text": "Profissionalismo e criatividade excepcionais"
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "type": "1",
+        "title": "Contate-me",
+        "address": "Trabalho Remoto",
+        "socialMedia": true,
+        "copyright": "© 2025 Portfolio"
+      }
+    }
+  ]
 }

@@ -1,23 +1,29 @@
 import { Box, List } from '@mui/material';
 import ItemSite from './ItemSite';
-
-interface Site {
-  id: number;
-  name: string;
-  createdAt: string | Date;
-}
-
-const sites: Site[] = [
-  { id: 1, name: 'Landing Page de Vendas', createdAt: '2024-08-29' },
-  { id: 2, name: 'Site Institucional', createdAt: '2024-08-28' },
-  { id: 3, name: 'Portfólio Online', createdAt: '2024-08-27' },
-  { id: 4, name: 'Blog Pessoal', createdAt: '2024-08-26' },
-  { id: 5, name: 'E-commerce', createdAt: '2024-08-25' },
-  { id: 6, name: 'Dashboard Admin', createdAt: '2024-08-24' },
-  { id: 7, name: 'Sistema de Gestão', createdAt: '2024-08-23' },
-];
+import { useEffect, useState } from 'react';
+import LandingPageService from '../../../shared/services/LandingPageService';
+import { SiteData } from '../../landingPage/types';
+import { useAuth } from '../../../shared/authentication/AuthContext';
 
 const SitesList: React.FC = () => {
+  const [sites, setSites] = useState<SiteData[]>([]);
+  const { user } = useAuth();
+
+  useEffect(() => {
+    const fetchSites = async () => {
+      if (user?.id) {
+        try {
+          const userSites = await LandingPageService.getUserSites(user.id);
+          setSites(userSites);
+        } catch (error) {
+          console.error('Error fetching sites:', error);
+        }
+      }
+    };
+
+    fetchSites();
+  }, [user?.id]);
+
   return (
     <Box
       component='main'
@@ -34,7 +40,14 @@ const SitesList: React.FC = () => {
       <Box sx={{ width: '80%', maxHeight: '400px', overflowY: 'auto' }}>
         <List>
           {sites.map((site) => (
-            <ItemSite key={site.id} site={site} />
+            <ItemSite
+              key={site.id}
+              site={{
+                id: Number(site.id),
+                name: site.siteName,
+                createdAt: site.createdAt
+              }}
+            />
           ))}
         </List>
       </Box>
