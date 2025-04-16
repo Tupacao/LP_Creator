@@ -5,6 +5,7 @@ import Register from './pages/Register/Register';
 import Sites from './pages/sites/Sites.tsx';
 import LPCreator from './pages/Creator/LPCreator';
 import PreCreator from './pages/PreCreator/PreCreator';
+import LandingPage from './pages/landingPage/LandingPage';
 import ProtectedRoute from './shared/authentication/ProtectedRoute.tsx';
 
 function Routers() {
@@ -21,6 +22,7 @@ function Routers() {
         </Route>
         <Route path='/sites' element={<ProtectedRoute><Sites /></ProtectedRoute>} />
         <Route path='/user' element={<ProtectedRoute><h1>Dados do Usuário</h1></ProtectedRoute>} />
+        <Route path='/landingpage' element={<LandingPage />} />
         <Route path='*' element={<h1>Página não encontrada</h1>} />
       </Routes>
 
