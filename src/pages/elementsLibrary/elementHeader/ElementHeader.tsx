@@ -13,7 +13,25 @@ const style = {
   gap: 1,
 };
 
-export default function ElementHeader() {
+interface ElementHeaderProps {
+  titleText: string;
+  setTitleText: (value: string) => void;
+  description: string;
+  setDescription: (value: string) => void;
+  buttonText: string;
+  setButtonText: (value: string) => void;
+}
+
+export default function ElementHeader(props: ElementHeaderProps) {
+  const {
+    titleText,
+    setTitleText,
+    description,
+    setDescription,
+    buttonText,
+    setButtonText,
+  } = props;
+
   const header1 = (
     <Box
       data-testid='header1'
@@ -22,13 +40,21 @@ export default function ElementHeader() {
         alignItems: 'start',
       }}
     >
-      <TitleText titleText='Transforme as suas Ideias em realidade com nossos móveis personalizados' />
-      <DescriptionText
-        descriptionText='Criamos móveis sob medida que refletem sua personalidade e atendem às
-        suas necessidades. Cada peça é única, feita com materiais de alta
-        qualidade e um cuidado excepcional em cada detalhe.'
+      <TitleText
+        titleText={titleText}
+        setTitle={setTitleText}
+        placeholder='Type 1'
       />
-      <ButtonText hasIcon={true} />
+      <DescriptionText
+        descriptionText={description}
+        setDescription={setDescription}
+        width='600px'
+      />
+      <ButtonText
+        hasIcon={true}
+        buttonText={buttonText}
+        setButtonText={setButtonText}
+      />
     </Box>
   );
 
@@ -42,13 +68,22 @@ export default function ElementHeader() {
         textAlign: 'center',
       }}
     >
-      <TitleText titleText='Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, aliquam!' />
-      <DescriptionText
-        descriptionText='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-        deleniti omnis quas libero laboriosam vel? Perspiciatis harum facere
-        laudantium sequi.'
+      <TitleText
+        titleText={titleText}
+        setTitle={setTitleText}
+        middle={true}
+        placeholder='Type 2'
       />
-      <ButtonText hasIcon={false} />
+      <DescriptionText
+        descriptionText={description}
+        setDescription={setDescription}
+        middle={true}
+      />
+      <ButtonText
+        hasIcon={true}
+        buttonText={buttonText}
+        setButtonText={setButtonText}
+      />
     </Box>
   );
 

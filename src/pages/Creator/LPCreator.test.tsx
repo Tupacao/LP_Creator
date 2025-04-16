@@ -1,5 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import LPCreator from '../Creator/LPCreator';
+import LPCreator from '../creator/LPCreator';
 import { MemoryRouter } from 'react-router-dom';
 
 describe('LPCreator', () => {
@@ -23,7 +23,7 @@ describe('LPCreator', () => {
   test('Should add new section when click', () => {
     const button = screen.getByTestId('add-section');
     fireEvent.click(button);
-    expect(screen.getByText('Section2')).toBeInTheDocument();
+    expect(screen.getByText('Section 2')).toBeInTheDocument();
   });
 
   test('Should remove one section when click', () => {
@@ -59,21 +59,13 @@ describe('LPCreator', () => {
     expect(buttonChange).toBeInTheDocument();
 
     await waitFor(() => {
-      expect(
-        screen.getByText(
-          'Transforme as suas Ideias em realidade com nossos móveis personalizados',
-        ),
-      ).toBeInTheDocument();
+      expect(screen.getByPlaceholderText('Type 1')).toBeInTheDocument();
     });
 
     fireEvent.click(buttonChange);
 
     await waitFor(() => {
-      expect(
-        screen.getByText(
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, aliquam!',
-        ),
-      ).toBeInTheDocument();
+      expect(screen.getByPlaceholderText('Type 2')).toBeInTheDocument();
     });
   });
 });

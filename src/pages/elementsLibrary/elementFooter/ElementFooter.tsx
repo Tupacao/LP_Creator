@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import TitleText from '../components/titleText/TitleText';
 import DescriptionText from '../components/descriptionText/DescriptionText';
 import IconBox from './components/iconBox/IconBox';
@@ -12,13 +12,27 @@ const style = {
   gap: 2,
 };
 
-export default function ElementFooter() {
+const typographyStyle = {
+  fontSize: '1rem',
+  fontWeight: 'bold',
+  color: 'inherit',
+};
+
+interface ElementFooterProps {
+  addressText: string;
+  setAddressText: (value: string) => void;
+  copyright: string;
+  setCopyright: (value: string) => void;
+}
+
+export default function ElementFooter(props: ElementFooterProps) {
+  const { addressText, setAddressText, copyright, setCopyright } = props;
+
   const footer1 = (
     <Box
       data-testid='footer1'
       sx={{
         display: 'flex',
-        justifyContent: 'space-around',
         mx: 'auto',
         alignItems: 'center',
       }}
@@ -26,27 +40,32 @@ export default function ElementFooter() {
       <Box
         sx={{
           ...style,
+          width: '50%',
         }}
       >
-        <TitleText titleText='Entre em Contato' />
-        <Box width={'60%'}>
+        <Typography sx={{ ...typographyStyle, fontSize: '1.5rem' }}>
+          Entre em contato
+        </Typography>
+        <Box>
+          <Typography sx={{ ...typographyStyle }}>
+            Atendimento Presencial
+          </Typography>
           <DescriptionText
-            descriptionText='Atendimento Presencial'
-            isStrong={true}
+            descriptionText={addressText}
+            setDescription={setAddressText}
           />
-          <DescriptionText descriptionText='Rua Arminda de Lima, 285, Guarulhos On-line para todo o Brasil' />
         </Box>
         <Box>
-          <DescriptionText
-            descriptionText='Nossas redes Sociais'
-            isStrong={true}
-          />
+          <Typography sx={{ ...typographyStyle, mb: 1 }}>
+            Nossas Redes Sociais
+          </Typography>
           <Box display={'flex'} gap={2}>
             <IconBox />
             <IconBox />
             <IconBox />
           </Box>
         </Box>
+        <TitleText titleText={copyright} setTitle={setCopyright} size='1rem' />
       </Box>
       <MapBox width={300} height={200} />
     </Box>
@@ -70,17 +89,19 @@ export default function ElementFooter() {
       >
         <ImageBox width={100} height={100} />
         <Box>
+          <Typography sx={{ ...typographyStyle }}>
+            Atendimento Presencial
+          </Typography>
           <DescriptionText
-            descriptionText='Atendimento Presencial'
-            isStrong={true}
-          />
-          <DescriptionText
-            descriptionText='Rua Levindo Lopes, 357 - 5º e 12º Andar - Savassi, Belo Horizonte
-              - MG, 30140-170'
+            descriptionText={addressText}
+            setDescription={setAddressText}
+            width='200px'
           />
         </Box>
         <Box>
-          <DescriptionText descriptionText='Redes Sociais' isStrong={true} />
+          <Typography sx={{ ...typographyStyle, mb: 1 }}>
+            Nossas Redes Sociais
+          </Typography>
           <Box display={'flex'} gap={2}>
             <IconBox />
             <IconBox />
@@ -89,12 +110,7 @@ export default function ElementFooter() {
         </Box>
         <MapBox width={200} height={150} />
       </Box>
-      <Box>
-        <DescriptionText
-          descriptionText='Copyright 2025 - Todos os direitos reservados'
-          isStrong={true}
-        />
-      </Box>
+      <TitleText titleText={copyright} setTitle={setCopyright} size='1rem' />
     </Box>
   );
 

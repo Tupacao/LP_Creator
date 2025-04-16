@@ -10,8 +10,8 @@ const style_outBox = {
   px: 5,
   py: 10,
   display: 'flex',
+  justifyContent: 'space-around',
   alignItems: 'center',
-  justifyContent: 'space-between',
 };
 
 const style_innerBox = {
@@ -20,7 +20,47 @@ const style_innerBox = {
   gap: 1,
 };
 
-export default function ElementSection() {
+interface ElementSectionProps {
+  titleText: string;
+  setTitleText: (value: string) => void;
+  description: string;
+  setDescription: (value: string) => void;
+  buttonText: string;
+  setButtonText: (value: string) => void;
+  titleBox: any[];
+  setTitleBox: (value: any[]) => void;
+}
+
+export default function ElementSection(props: ElementSectionProps) {
+  const {
+    titleText,
+    setTitleText,
+    buttonText,
+    setButtonText,
+    description,
+    setDescription,
+    titleBox,
+    setTitleBox,
+  } = props;
+
+  const handleTitle = (value: string, index: number) => {
+    const newTitleBox = [...titleBox];
+    newTitleBox[index] = { ...newTitleBox[index], titleBox: value };
+    setTitleBox(newTitleBox);
+  };
+
+  const handleDescription = (value: string, index: number) => {
+    const newTitleBox = [...titleBox];
+    newTitleBox[index] = { ...newTitleBox[index], descriptionBox: value };
+    setTitleBox(newTitleBox);
+  };
+
+  const handleButton = (value: string, index: number) => {
+    const newTitleBox = [...titleBox];
+    newTitleBox[index] = { ...newTitleBox[index], buttonBox: value };
+    setTitleBox(newTitleBox);
+  };
+
   const section1 = (
     <Box
       data-testid='section1'
@@ -32,22 +72,26 @@ export default function ElementSection() {
         sx={{
           ...style_innerBox,
           alignItems: 'start',
+          width: '50%',
         }}
       >
         <Box>
-          <DescriptionText
-            descriptionText='Lorem ipsum dolor sit.'
-            isStrong={true}
+          <TitleText
+            titleText={titleText}
+            setTitle={setTitleText}
+            width='300px'
           />
-          <TitleText titleText='Lorem ipsum dolor sit.' />
         </Box>
         <DescriptionText
-          descriptionText='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
-          quidem. Mollitia voluptates veniam, iste dolor ut corporis est at ab
-          consequatur modi totam obcaecati porro nemo nisi asperiores doloremque
-          commodi!'
+          descriptionText={description}
+          setDescription={setDescription}
+          width='500px'
         />
-        <ButtonText hasIcon={false} />
+        <ButtonText
+          hasIcon={false}
+          buttonText={buttonText}
+          setButtonText={setButtonText}
+        />
       </Box>
       <ImageBox width={300} height={200} />
     </Box>
@@ -58,31 +102,37 @@ export default function ElementSection() {
       data-testid='section2'
       sx={{
         ...style_outBox,
+        width: '100%',
       }}
     >
       <ImageBox width={300} height={200} />
       <Box
         sx={{
           ...style_innerBox,
-          width: '60%',
+          width: '50%',
           alignItems: 'flex-end',
           textAlign: 'right',
         }}
       >
         <Box>
-          <DescriptionText
-            descriptionText='Lorem ipsum dolor sit.'
-            isStrong={true}
+          <TitleText
+            titleText={titleText}
+            setTitle={setTitleText}
+            position='end'
+            width='300px'
           />
-          <TitleText titleText='Lorem ipsum dolor sit.' />
         </Box>
         <DescriptionText
-          descriptionText='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
-          quidem. Mollitia voluptates veniam, iste dolor ut corporis est at ab
-          consequatur modi totam obcaecati porro nemo nisi asperiores doloremque
-          commodi!'
+          descriptionText={description}
+          setDescription={setDescription}
+          width='300px'
+          position='end'
         />
-        <ButtonText hasIcon={false} />
+        <ButtonText
+          hasIcon={false}
+          buttonText={buttonText}
+          setButtonText={setButtonText}
+        />
       </Box>
     </Box>
   );
@@ -98,16 +148,17 @@ export default function ElementSection() {
         width: '80%',
       }}
     >
-      <TitleText
-        titleText='Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste cupiditate
-        distinctio laboriosam sed mollitia voluptatem!'
-      />
+      <TitleText titleText={titleText} setTitle={setTitleText} middle={true} />
       <DescriptionText
-        descriptionText='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam unde
-        incidunt suscipit labore, eligendi animi deleniti voluptates adipisci
-        nam voluptatem quasi rem id et in ea tenetur impedit quo? Veritatis?'
+        descriptionText={description}
+        setDescription={setDescription}
+        middle={true}
       />
-      <ButtonText hasIcon={false} />
+      <ButtonText
+        hasIcon={false}
+        buttonText={buttonText}
+        setButtonText={setButtonText}
+      />
     </Box>
   );
 
@@ -120,11 +171,50 @@ export default function ElementSection() {
           gap: 3,
         }}
       >
-        <TextBox />
+        <TextBox
+          titleText={titleBox[0].titleBox}
+          description={titleBox[0].descriptionBox}
+          buttonText={titleBox[0].buttonBox}
+          setTitleText={(value) => {
+            handleTitle(value, 0);
+          }}
+          setDescription={(value) => {
+            handleDescription(value, 0);
+          }}
+          setButtonText={(value) => {
+            handleButton(value, 0);
+          }}
+        />
         <Box mt={-1}>
-          <TextBox />
+          <TextBox
+            titleText={titleBox[1]?.titleBox}
+            description={titleBox[1]?.descriptionBox}
+            buttonText={titleBox[1]?.buttonBox}
+            setTitleText={(value) => {
+              handleTitle(value, 1);
+            }}
+            setDescription={(value) => {
+              handleDescription(value, 1);
+            }}
+            setButtonText={(value) => {
+              handleButton(value, 1);
+            }}
+          />
         </Box>
-        <TextBox />
+        <TextBox
+          titleText={titleBox[2]?.titleBox}
+          description={titleBox[2]?.descriptionBox}
+          buttonText={titleBox[2]?.buttonBox}
+          setTitleText={(value) => {
+            handleTitle(value, 2);
+          }}
+          setDescription={(value) => {
+            handleDescription(value, 2);
+          }}
+          setButtonText={(value) => {
+            handleButton(value, 2);
+          }}
+        />
       </Box>
     </Box>
   );

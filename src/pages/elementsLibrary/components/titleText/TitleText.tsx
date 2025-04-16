@@ -1,13 +1,52 @@
-import { Typography } from '@mui/material';
+import { TextField } from '@mui/material';
 
-export default function TitleText({ titleText }: { titleText: string }) {
+interface TitleTextProps {
+  titleText: string;
+  setTitle: (value: string) => void;
+  width?: string;
+  size?: string;
+  middle?: boolean;
+  position?: string;
+  placeholder?: string;
+}
+
+export default function TitleText({
+  titleText,
+  setTitle,
+  middle,
+  size = '1.5rem',
+  width = '800px',
+  position = 'start',
+  placeholder = 'Entre em Contato',
+}: TitleTextProps) {
   return (
-    <Typography
-      variant='h5'
-      fontFamily={'Poppins, sans-serif'}
-      fontWeight={'bold'}
-    >
-      {titleText}
-    </Typography>
+    <TextField
+      value={titleText}
+      onChange={(e) => setTitle(e.target.value)}
+      placeholder={placeholder}
+      variant='standard'
+      multiline
+      sx={{
+        backgroundColor: 'transparent',
+        whiteSpace: 'pre-wrap',
+        wordWrap: 'break-word',
+        overflowWrap: 'break-word',
+      }}
+      slotProps={{
+        input: {
+          disableUnderline: true,
+          style: {
+            width: width,
+            textAlignLast: middle
+              ? 'center'
+              : (position as React.CSSProperties['textAlignLast']),
+            margin: '0 auto',
+            fontSize: size,
+            fontWeight: 'bold',
+            color: 'inherit',
+          },
+        },
+      }}
+    />
   );
 }

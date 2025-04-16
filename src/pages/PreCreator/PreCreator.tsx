@@ -59,21 +59,21 @@ export default function PreCreator() {
               type='name'
               placeholder='Fulano de tal'
               functionOnChange={(e) => setName(e.target.value)}
-              id="precreator-name"
+              id='precreator-name'
             />
             <FormInput
               label='Descrição da LP'
               type='string'
               placeholder='Fazemos a diferença ...'
               functionOnChange={(e) => setDesc(e.target.value)}
-              id="precreator-desc"
+              id='precreator-desc'
             />
             <FormInput
               label='Logo'
               type='string'
               placeholder='Insira a url'
               functionOnChange={(e) => setUrl(e.target.value)}
-              id="precreator-url"
+              id='precreator-url'
             />
           </Box>
           <Box width={'40%'}>

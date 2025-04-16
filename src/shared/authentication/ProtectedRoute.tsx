@@ -3,21 +3,21 @@ import { Navigate } from 'react-router-dom';
 import { useAuth } from './AuthContext.tsx';
 
 interface ProtectedRouteProps {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
-    const { isAuthenticated, isLoading } = useAuth();
+  const { isAuthenticated, isLoading } = useAuth();
 
-    if (isLoading) {
-        return <div>Carregando...</div>;
-    }
+  if (isLoading) {
+    return <div>Carregando...</div>;
+  }
 
-    if (!isAuthenticated) {
-        return <Navigate to="/login" />;
-    }
+  if (!isAuthenticated) {
+    return <Navigate to='/login' />;
+  }
 
-    return children;
+  return children;
 };
 
 export default ProtectedRoute;

@@ -3,7 +3,24 @@ import ElementSection from './ElementSection';
 
 describe('ElementSection', () => {
   test('Should render ElementSection', () => {
-    render(<ElementSection />);
+    const elementMockProp = {
+      titleText: '',
+      setTitleText: jest.fn(),
+      buttonText: '',
+      setButtonText: jest.fn(),
+      description: '',
+      setDescription: jest.fn(),
+      titleBox: [
+        {
+          titleBox: 'Title 1',
+          descriptionBox: 'Description 1',
+          buttonBox: 'Button 1',
+        },
+      ],
+      setTitleBox: jest.fn(),
+    };
+
+    render(ElementSection(elementMockProp));
 
     const section = screen.getAllByTestId(/section/);
     expect(section.length).toBe(4);
