@@ -13,18 +13,60 @@ import SectionBox from '../creator/components/sectionBox/SectionBox';
 import ModalButton from '../creator/components/modalButton/ModalButton';
 import ElementLibrary from '../elementsLibrary/ElementLibrary';
 
-const elementFooter = Object.values(ElementLibrary.ElementFooter);
-const elementHeader = Object.values(ElementLibrary.ElementHeader);
-const elementSection = Object.values(ElementLibrary.ElementSection);
-
 export default function LPCreator() {
+  const [titleText, setTitleText] = useState('');
+  const [description, setDescription] = useState('');
+  const [buttonText, setButtonText] = useState('');
+  const [addressText, setAddressText] = useState('');
+  const [copyright, setCopyright] = useState(
+    'Copyright 2025 - Todos os direitos reservados',
+  );
+  const [titleBox, setTitleBox] = useState([
+    {
+      titleBox: '',
+      descriptionBox: '',
+      buttonBox: '',
+    },
+    {
+      titleBox: '',
+      descriptionBox: '',
+      buttonBox: '',
+    },
+    {
+      titleBox: '',
+      descriptionBox: '',
+      buttonBox: '',
+    },
+  ]);
+
+  const elementContentProps = {
+    titleText,
+    setTitleText,
+    description,
+    setDescription,
+    buttonText,
+    setButtonText,
+    addressText,
+    setAddressText,
+    copyright,
+    setCopyright,
+    titleBox,
+    setTitleBox,
+  };
+
+  const elementLib = ElementLibrary(elementContentProps);
+
+  const elementFooter = Object.values(elementLib.ElementFooter);
+  const elementHeader = Object.values(elementLib.ElementHeader);
+  const elementSection = Object.values(elementLib.ElementSection);
+
   const [dataSection, setDataSection] = useState([
     { title: 'Section 1', color: false },
   ]);
 
   const [activateType, setActiveType] = useState<String>('Header 0');
   const [indexClick, setIndexClick] = useState<number>(-1);
-  const [elmentIndex, setElementIndex] = useState<number>(0);
+  const [elementIndex, setElementIndex] = useState<number>(0);
 
   const handleClickType = (title: String, index: number) => {
     setActiveType(title);
@@ -53,7 +95,7 @@ export default function LPCreator() {
       return;
     }
     const newSection = {
-      title: `Section${dataSection.length + 1}`,
+      title: `Section ${dataSection.length + 1}`,
       color: false,
     };
     setDataSection([...dataSection, newSection]);
@@ -62,7 +104,7 @@ export default function LPCreator() {
   const removeSection = (index: number) => {
     const newSection = dataSection.filter((_item, i) => i !== index);
     const newSection2 = newSection.map((item, i) => ({
-      title: `Section${i + 1}`,
+      title: `Section ${i + 1}`,
       color: item.color,
     }));
     setDataSection(newSection2);
@@ -159,10 +201,10 @@ export default function LPCreator() {
           }}
         >
           {indexClick == -1
-            ? elementHeader[elmentIndex]
+            ? elementHeader[elementIndex]
             : indexClick == dataSection.length
-              ? elementFooter[elmentIndex]
-              : elementSection[elmentIndex]}
+              ? elementFooter[elementIndex]
+              : elementSection[elementIndex]}
         </Box>
         <Box
           data-testid='right-click'

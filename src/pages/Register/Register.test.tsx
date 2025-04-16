@@ -1,4 +1,4 @@
-import {render, screen, fireEvent, waitFor} from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Register from './Register';
 import { useAuth } from '../../shared/authentication/AuthContext';
@@ -28,9 +28,11 @@ describe('Register Component', () => {
 
   const renderWithRouter = (ui: React.ReactElement) => {
     return render(
-        <MemoryRouter> {/* Envolva o componente com o MemoryRouter */}
-          {ui}
-        </MemoryRouter>
+      <MemoryRouter>
+        {' '}
+        {/* Envolva o componente com o MemoryRouter */}
+        {ui}
+      </MemoryRouter>,
     );
   };
 
@@ -65,17 +67,25 @@ describe('Register Component', () => {
     const logo = screen.getByAltText('logo');
     expect(logo).toBeInTheDocument();
     expect(logo).toHaveAttribute(
-        'src',
-        'https://amopaocaseiro.com.br/wp-content/uploads/2022/08/yt-069_pao-de-queijo_receita-840x560.jpg',
+      'src',
+      'https://amopaocaseiro.com.br/wp-content/uploads/2022/08/yt-069_pao-de-queijo_receita-840x560.jpg',
     );
   });
 
   test('calls register function with correct data on form submission', async () => {
     renderWithRouter(<Register />);
-    const nomeInput = screen.getByTestId('register-nome-input') as HTMLInputElement;
-    const emailInput = screen.getByTestId('register-email-input') as HTMLInputElement;
-    const senhaInput = screen.getByTestId('register-senha-input') as HTMLInputElement;
-    const confirmSenhaInput = screen.getByTestId('register-confirm-senha-input') as HTMLInputElement;
+    const nomeInput = screen.getByTestId(
+      'register-nome-input',
+    ) as HTMLInputElement;
+    const emailInput = screen.getByTestId(
+      'register-email-input',
+    ) as HTMLInputElement;
+    const senhaInput = screen.getByTestId(
+      'register-senha-input',
+    ) as HTMLInputElement;
+    const confirmSenhaInput = screen.getByTestId(
+      'register-confirm-senha-input',
+    ) as HTMLInputElement;
     const registerButton = screen.getByText('Criar conta');
 
     fireEvent.change(nomeInput, { target: { value: 'Teste' } });
@@ -84,15 +94,27 @@ describe('Register Component', () => {
     fireEvent.change(confirmSenhaInput, { target: { value: 'password123' } });
     fireEvent.click(registerButton);
 
-    expect(mockRegister).toHaveBeenCalledWith({ nome: 'Teste', email: 'test@example.com', senha: 'password123' });
+    expect(mockRegister).toHaveBeenCalledWith({
+      nome: 'Teste',
+      email: 'test@example.com',
+      senha: 'password123',
+    });
   });
 
   test('displays error message when passwords do not match', async () => {
     renderWithRouter(<Register />);
-    const nomeInput = screen.getByTestId('register-nome-input') as HTMLInputElement;
-    const emailInput = screen.getByTestId('register-email-input') as HTMLInputElement;
-    const senhaInput = screen.getByTestId('register-senha-input') as HTMLInputElement;
-    const confirmSenhaInput = screen.getByTestId('register-confirm-senha-input') as HTMLInputElement;
+    const nomeInput = screen.getByTestId(
+      'register-nome-input',
+    ) as HTMLInputElement;
+    const emailInput = screen.getByTestId(
+      'register-email-input',
+    ) as HTMLInputElement;
+    const senhaInput = screen.getByTestId(
+      'register-senha-input',
+    ) as HTMLInputElement;
+    const confirmSenhaInput = screen.getByTestId(
+      'register-confirm-senha-input',
+    ) as HTMLInputElement;
     const registerButton = screen.getByText('Criar conta');
 
     fireEvent.change(nomeInput, { target: { value: 'Teste' } });

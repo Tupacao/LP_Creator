@@ -20,11 +20,11 @@ describe('DadosUsuario Component', () => {
 
   const renderWithProviders = () => {
     return render(
-        <QueryClientProvider client={queryClient}>
-          <MemoryRouter>
-            <DadosUsuario open={true} onClose={mockOnClose} />
-          </MemoryRouter>
-        </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter>
+          <DadosUsuario open={true} onClose={mockOnClose} />
+        </MemoryRouter>
+      </QueryClientProvider>,
     );
   };
 
@@ -67,9 +67,15 @@ describe('DadosUsuario Component', () => {
     renderWithProviders();
     await waitFor(() => screen.getByDisplayValue('senha123'));
     const toggleBtn = screen.getByLabelText(/alternar visibilidade da senha/i);
-    expect(screen.getByDisplayValue('senha123')).toHaveAttribute('type', 'password');
+    expect(screen.getByDisplayValue('senha123')).toHaveAttribute(
+      'type',
+      'password',
+    );
     fireEvent.click(toggleBtn);
-    expect(screen.getByDisplayValue('senha123')).toHaveAttribute('type', 'text');
+    expect(screen.getByDisplayValue('senha123')).toHaveAttribute(
+      'type',
+      'text',
+    );
   });
 
   test('opens and closes sair modal', async () => {
@@ -81,14 +87,18 @@ describe('DadosUsuario Component', () => {
     const cancelarBtn = screen.getByRole('button', { name: /cancelar/i });
     fireEvent.click(cancelarBtn);
     await waitFor(() => {
-      expect(screen.queryByText(/tem certeza que deseja sair/i)).not.toBeInTheDocument();
+      expect(
+        screen.queryByText(/tem certeza que deseja sair/i),
+      ).not.toBeInTheDocument();
     });
   });
 
   test('confirms sair and calls logout/onClose', async () => {
     renderWithProviders();
     fireEvent.click(screen.getByRole('button', { name: /sair/i }));
-    const confirmarBtn = await screen.findByRole('button', { name: /confirmar/i });
+    const confirmarBtn = await screen.findByRole('button', {
+      name: /confirmar/i,
+    });
     fireEvent.click(confirmarBtn);
     expect(mockLogout).toHaveBeenCalled();
     expect(mockOnClose).toHaveBeenCalled();
@@ -102,14 +112,18 @@ describe('DadosUsuario Component', () => {
     const cancelarBtn = screen.getByRole('button', { name: /cancelar/i });
     fireEvent.click(cancelarBtn);
     await waitFor(() => {
-      expect(screen.queryByText(/esta ação é irreversível/i)).not.toBeInTheDocument();
+      expect(
+        screen.queryByText(/esta ação é irreversível/i),
+      ).not.toBeInTheDocument();
     });
   });
 
   test('confirms excluir conta and calls deleteAccount, logout, and onClose', async () => {
     renderWithProviders();
     fireEvent.click(screen.getByRole('button', { name: /excluir conta/i }));
-    const excluirBtn = await screen.findByRole('button', { name: /^excluir$/i });
+    const excluirBtn = await screen.findByRole('button', {
+      name: /^excluir$/i,
+    });
     fireEvent.click(excluirBtn);
 
     await waitFor(() => {

@@ -3,7 +3,16 @@ import ElementHeader from './ElementHeader';
 
 describe('ElementHeader', () => {
   test('should render correctly', () => {
-    render(<ElementHeader />);
+    const elementMockProp = {
+      titleText: '',
+      setTitleText: jest.fn(),
+      description: '',
+      setDescription: jest.fn(),
+      buttonText: '',
+      setButtonText: jest.fn(),
+    };
+
+    render(ElementHeader(elementMockProp));
 
     const header = screen.getAllByTestId(/header/);
 

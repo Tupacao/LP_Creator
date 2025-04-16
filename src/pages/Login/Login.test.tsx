@@ -47,7 +47,7 @@ describe('Login Component', () => {
   test('Should render redirect text', () => {
     render(<Login />);
     const registerRedirect = screen.getByText(
-        'Não tem uma Conta? Registre aqui',
+      'Não tem uma Conta? Registre aqui',
     );
     expect(registerRedirect).toBeInTheDocument();
     expect(registerRedirect).toHaveAttribute('href', '/register');
@@ -61,15 +61,22 @@ describe('Login Component', () => {
 
   test('calls login function with correct credentials on form submission', async () => {
     render(<Login />);
-    const emailInput = screen.getByTestId('login-email-input') as HTMLInputElement;
-    const passwordInput = screen.getByTestId('login-password-input') as HTMLInputElement;
+    const emailInput = screen.getByTestId(
+      'login-email-input',
+    ) as HTMLInputElement;
+    const passwordInput = screen.getByTestId(
+      'login-password-input',
+    ) as HTMLInputElement;
     const loginButton = screen.getByText('Logar');
 
     fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
     fireEvent.change(passwordInput, { target: { value: 'password123' } });
     fireEvent.click(loginButton);
 
-    expect(mockLogin).toHaveBeenCalledWith({ email: 'test@example.com', senha: 'password123' });
+    expect(mockLogin).toHaveBeenCalledWith({
+      email: 'test@example.com',
+      senha: 'password123',
+    });
   });
 
   test('displays error message when login fails', async () => {
