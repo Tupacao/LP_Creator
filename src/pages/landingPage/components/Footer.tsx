@@ -1,51 +1,51 @@
 import { Box, Typography } from '@mui/material';
 import { FooterData } from '../types';
 
-const Footer1 = ({ data }: { data: FooterData }) => (
-    <Box
-        sx={{
-            display: 'flex',
-            justifyContent: 'space-around',
-            alignItems: 'center',
-            p: 4,
-            bgcolor: 'background.paper',
-        }}
-    >
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-            <Typography variant="h6">{data.title}</Typography>
-            <Typography>{data.address}</Typography>
-            {data.socialMedia && (
-                <Box sx={{ display: 'flex', gap: 2 }}>
-                    <h1>icones</h1>
-                </Box>
-            )}
-        </Box>
-        <Typography variant="caption">{data.copyright}</Typography>
+const SocialIcons = () => (
+    <Box sx={{ display: 'flex', gap: 1 }}>
+        <h3>icones</h3>
     </Box>
 );
 
-const Footer2 = ({ data }: { data: FooterData }) => (
+export const Footer1 = ({ data }: { data: FooterData }) => (
+    <Box
+        sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            p: 4,
+            bgcolor: 'grey.900',
+            color: 'white',
+        }}
+    >
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+            <Typography variant="h6">{data.title}</Typography>
+            <Typography variant="body2">{data.address}</Typography>
+            {data.socialMedia && <SocialIcons />}
+        </Box>
+        <Typography variant="caption" sx={{ mt: { xs: 2, md: 0 } }}>
+            {data.copyright}
+        </Typography>
+    </Box>
+);
+
+export const Footer2 = ({ data }: { data: FooterData }) => (
     <Box
         sx={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: 3,
+            textAlign: 'center',
+            gap: 2,
             p: 4,
-            bgcolor: 'background.paper',
+            bgcolor: 'grey.800',
+            color: 'white',
         }}
     >
         <Typography variant="h6">{data.title}</Typography>
-        <Box sx={{ display: 'flex', gap: 4, alignItems: 'center' }}>
-            <Typography>{data.address}</Typography>
-            {data.socialMedia && (
-                <Box sx={{ display: 'flex', gap: 2 }}>
-                    <h1>icones</h1>
-                </Box>
-            )}
-        </Box>
+        <Typography>{data.address}</Typography>
+        {data.socialMedia && <SocialIcons />}
         <Typography variant="caption">{data.copyright}</Typography>
     </Box>
 );
-
-export { Footer1, Footer2 };

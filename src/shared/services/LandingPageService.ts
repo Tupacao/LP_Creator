@@ -31,9 +31,23 @@ const getUserSites = async (userId: string): Promise<SiteData[]> => {
     }
 };
 
+const deleteSite = async (siteId: string): Promise<void> => {
+    try {
+        await axios.delete(`${API_URL}/sites/${siteId}`);
+    } catch (error) {
+        if (error instanceof AxiosError) {
+            console.error('Erro ao excluir site:', error.message);
+        } else {
+            console.error('Erro inesperado:', error);
+        }
+        throw error;
+    }
+};
+
 const LandingPageService = {
     getSiteData,
     getUserSites,
+    deleteSite,
 };
 
 export default LandingPageService;

@@ -9,48 +9,6 @@
   ],
   "sites": [
     {
-      "id": "1",
-      "userId": "316c",
-      "siteName": "Meu Site Mock 1",
-      "createdAt": "2025-04-14T12:00:00Z",
-      "header": {
-        "type": "1",
-        "title": "Bem-vindo!",
-        "subtitle": "A melhor landing page",
-        "buttonText": "Saiba Mais"
-      },
-      "sections": [
-        {
-          "type": "1",
-          "orderIndex": 1,
-          "title": "Nossa Missão",
-          "description": "Transformar ideias em realidade digital",
-          "imageUrl": "/assets/mission.jpg"
-        },
-        {
-          "type": "2",
-          "orderIndex": 2,
-          "features": [
-            {
-              "title": "Design Responsivo",
-              "description": "Seu site perfeito em qualquer dispositivo"
-            },
-            {
-              "title": "Performance",
-              "description": "Carregamento rápido e eficiente"
-            }
-          ]
-        }
-      ],
-      "footer": {
-        "type": "1",
-        "title": "Contato",
-        "address": "Rua Exemplo, 123",
-        "socialMedia": true,
-        "copyright": "© 2025 Meu Site"
-      }
-    },
-    {
       "id": "2",
       "userId": "316c",
       "siteName": "Site Corporativo",
@@ -146,6 +104,132 @@
         "address": "Trabalho Remoto",
         "socialMedia": true,
         "copyright": "© 2025 Portfolio"
+      }
+    },
+    {
+      "id": "4",
+      "userId": "316c",
+      "siteName": "Startup Verde",
+      "createdAt": "2025-04-16T12:00:00Z",
+      "header": {
+        "type": "2",
+        "title": "Tecnologia Sustentável",
+        "subtitle": "Inovação com propósito ecológico",
+        "buttonText": "Saiba Mais"
+      },
+      "sections": [
+        {
+          "type": "1",
+          "orderIndex": 1,
+          "title": "Nossa Missão",
+          "description": "Reduzir o impacto ambiental através da tecnologia",
+          "imageUrl": "/assets/green-tech.jpg"
+        },
+        {
+          "type": "2",
+          "orderIndex": 2,
+          "features": [
+            {
+              "title": "Energia Limpa",
+              "description": "Soluções com energia solar e eólica"
+            },
+            {
+              "title": "Reciclagem Digital",
+              "description": "Tecnologia aplicada à reutilização"
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "type": "2",
+        "title": "Contato Sustentável",
+        "address": "Rua Verde, 123",
+        "socialMedia": true,
+        "copyright": "© 2025 Startup Verde"
+      }
+    },
+    {
+      "id": "5",
+      "userId": "316c",
+      "siteName": "Academia ProFit",
+      "createdAt": "2025-04-16T13:00:00Z",
+      "header": {
+        "type": "1",
+        "title": "Corpo e Mente Saudáveis",
+        "subtitle": "Treine conosco!",
+        "buttonText": "Matricule-se"
+      },
+      "sections": [
+        {
+          "type": "2",
+          "orderIndex": 1,
+          "features": [
+            {
+              "title": "Musculação",
+              "description": "Equipamentos modernos e ambiente climatizado"
+            },
+            {
+              "title": "Aulas Coletivas",
+              "description": "Yoga, Pilates, Zumba e muito mais"
+            }
+          ]
+        },
+        {
+          "type": "4",
+          "orderIndex": 2,
+          "email": "contato@profit.com",
+          "phone": "(31) 99888-1234",
+          "address": "Av. do Fitness, 1000"
+        }
+      ],
+      "footer": {
+        "type": "1",
+        "title": "ProFit",
+        "address": "Av. do Fitness, 1000",
+        "socialMedia": false,
+        "copyright": "© 2025 ProFit"
+      }
+    },
+    {
+      "id": "6",
+      "userId": "316c",
+      "siteName": "Blog de Viagens",
+      "createdAt": "2025-04-16T14:00:00Z",
+      "header": {
+        "type": "2",
+        "title": "Mochileiros pelo Mundo",
+        "subtitle": "Dicas, roteiros e experiências",
+        "buttonText": "Explorar"
+      },
+      "sections": [
+        {
+          "type": "3",
+          "orderIndex": 1,
+          "testimonials": [
+            {
+              "author": "Ana Costa",
+              "text": "As dicas sobre o Chile foram incríveis!"
+            },
+            {
+              "author": "Rafael Nunes",
+              "text": "Viajei com muito mais segurança após ler o blog"
+            }
+          ]
+        },
+        {
+          "type": "4",
+          "orderIndex": 2,
+          "email": "contato@mochilando.com",
+          "phone": "(21) 97777-8888",
+          "address": "Online"
+        }
+      ],
+      "footer": {
+        "type": "2",
+        "title": "Entre em Contato",
+        "address": "Online",
+        "socialMedia": true,
+        "copyright": "© 2025 Mochilando"
       }
     }
   ]
